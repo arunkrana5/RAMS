@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrivera - RMS</title>
+    <link rel='shortcut icon' href='~/favicon.ico' type='image/vnd.microsoft.icon' />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="~/lib/jquery-confirm/jquery-confirm.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="~/layout/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/layout/bootstrap-toggle.min.css" rel="stylesheet" />
+    <link href="~/layout/all.min.css" rel="stylesheet" />
+    <link href="~/layout/line-awesome.min.css" rel="stylesheet" />
+    <link href="~/layout/select2.min.css" rel="stylesheet" />
+    <link href="~/layout/app.css" rel="stylesheet" />
+    <link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
+    <style>
+        .tr_delete {
+            text-decoration: line-through;
+        }
+
+        div.overlay {
+            text-align: center !important;
+            vertical-align: central !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper default-version">
+        <div class="sidebar bg--dark">
+            <button class="res-sidebar-close-btn"><i class="las la-times"></i></button>
+            <div class="sidebar__inner">
+                <div class="sidebar__logo" style="background-color:#f3f3f9;height: 66px; margin: 0px;padding: 0px;">
+                    <a href="/admin/dashboard/index" class="sidebar__main-logo">
+                        <img src="~/assets/thrivera.jpeg" style="height: 66px;" />
+                    </a>
+                </div>
+
+                <div class="sidebar__menu-wrapper" id="sidebar__menuWrapper">
+                    <ul class="sidebar__menu">
+                        <li class="sidebar-menu-item active">
+                            <a href="@Url.Action("Index","Dashboard",new {area="SecureZone"})" class="nav-link ">
+                                <i class="menu-icon las la-home"></i>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-users"></i>
+                                <span class="menu-title">Attendance</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="@Url.Action("Attendance","Transaction",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Add</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-users"></i>
+                                <span class="menu-title">Transactions</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="@Url.Action("VendorList","Transaction",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Vendors</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="@Url.Action("NewVendor","Transaction",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Add Vendors</span>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="sidebar-menu-item ">
+                                        <a href="@Url.Action("EnrollmentStatus","Transaction",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Enrollment Status</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="sidebar-menu-item ">
+                                        <a href="@Url.Action("PJP", "Transaction",new {Area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">PJP</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar end -->
+        <!-- navbar-wrapper start -->
+        <nav class="navbar-wrapper bg--dark">
+            <div class="navbar__left">
+                <button type="button" class="res-sidebar-open-btn me-3"><i class="las la-bars"></i></button>
+                <form class="navbar-search">
+                    <input type="search" name="#0" class="navbar-search-field" id="searchInput" autocomplete="off"
+                           placeholder="Search here...">
+                    <i class="las la-search"></i>
+                    <ul class="search-list"></ul>
+                </form>
+            </div>
+            <div class="navbar__right">
+                <ul class="navbar__action-list">
+                    <li class="dropdown">
+                        <button type="button" class="primary--layer" data-bs-toggle="dropdown" data-display="static"
+                                aria-haspopup="true" aria-expanded="false">
+                            <i class="las la-bell text--primary  icon-left-right "></i>
+                        </button>
+                    </li>
+                    <li class="dropdown">
+                        <button type="button" class="" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true"
+                                aria-expanded="false">
+                            <span class="navbar-user">
+                                <span class="navbar-user__thumb">
+                                    <img src="~/assets/media/avatars/300-10.jpg" />
+                                </span>
+                                <span class="navbar-user__info">
+                                    <span class="navbar-user__name">Arun</span>
+                                </span>
+                                <span class="icon"><i class="las la-chevron-circle-down"></i></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right">
+                            <a href="@Url.Action("MyProfile","Account",new{area="SecureZone"})"
+                               class="dropdown-menu__item d-flex align-items-center px-3 py-2">
+                                <i class="dropdown-menu__icon las la-user-circle"></i>
+                                <span class="dropdown-menu__caption">Profile</span>
+                            </a>
+                            <a href="#"
+                               class="dropdown-menu__item d-flex align-items-center px-3 py-2">
+                                <i class="dropdown-menu__icon las la-user-circle"></i>
+                                <span class="dropdown-menu__caption">Last login: @DateTime.Now</span>
+                            </a>
+                            <a href="@Url.Action("Logout","Account",new {area="SecureZone"})"
+                               class="dropdown-menu__item d-flex align-items-center px-3 py-2">
+                                <i class="dropdown-menu__icon las la-sign-out-alt"></i>
+                                <span class="dropdown-menu__caption">Logout</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+
+                @RenderBody()
+
+
+            </div>
+        </div>
+    </div>
+    <script src="~/layout/bootstrap.bundle.min.js"></script>
+    <script src="~/layout/bootstrap-toggle.min.js"></script>
+    <script src="~/layout/jquery.slimscroll.min.js"></script>
+    <link href="~/layout/izitoast.min.css" rel="stylesheet" />
+    <script src="~/layout/izitoast.min.js"></script>
+    <script src="~/assets/js/jquery-confirm.js"></script>
+    <script>
+        "use strict";
+        function notify(status, message) {
+            iziToast[status]({
+                message: message,
+                position: "topRight"
+            });
+        }
+    </script> 
+    <script src="~/layout/nicedit.js"></script>
+    <script src="~/layout/select2.min.js"></script>
+    <script src="~/layout/app.js"></script> 
+    <script>
+        "use strict";
+        bkLib.onDomLoaded(function () {
+            $(".nicEdit").each(function (index) {
+                $(this).attr("id", "nicEditor" + index);
+                new nicEditor({ fullPanel: true }).panelInstance('nicEditor' + index, { hasPanel: true });
+            });
+        });
+        (function ($) {
+            $(document).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain', function () {
+                $('.nicEdit-main').focus();
+            });
+        })(jQuery);
+    </script> 
+    <script>
+        if ($('li').hasClass('active')) {
+            $('#sidebar__menuWrapper').animate({
+                scrollTop: eval($(".active").offset().top - 320)
+            }, 500);
+        }
+    </script>
+</body>
+</html>

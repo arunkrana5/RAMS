@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "_Layout";
+}
+<div class="d-flex mb-30 flex-wrap gap-3 justify-content-between align-items-center">
+    <h6 class="page-title">Dashboard</h6>
+
+</div>
+<div class="row gy-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="tab-content m-2">
+                <div class="row gy-4">
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--blue">
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-user-cog"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="">0</h3>
+                                <p class="text--white">Vendors</p>
+                            </div>
+                            <a href="@Url.Action("VendorList","Transaction", new {Area="SecureZone"})" class="widget-two__btn border border--white btn-outline--primary text--white">View All</a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--green">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="lar la-paper-plane"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1">0</h3>
+                                <p class="text--white">Add Vendors</p>
+                            </div>
+                            <a href="@Url.Action("NewVendor","Transaction",new {Area="SecureZone"})" class="widget-two__btn border border--white text--white btn-outline--success">View All</a>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--pink">
+                            <i class="las la-percent overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="lar la-credit-card"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text-white" id="Vendor_L2">0</h3>
+                                <p class="text-white">Attendance</p>
+                            </div>
+                            <a href="javascript:void(0);" class="widget-two__btn border border--white text-white btn-outline--warning">View All</a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--brown">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="fa fa-paper-plane"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text-white" id="Vendor_L3">0</h3>
+                                <p class="text-white">PJP</p>
+                            </div>
+                            <a href="javascript:void(0);" class="widget-two__btn border border--white text-white btn-outline--primary">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

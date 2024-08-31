@@ -1,0 +1,15 @@
+D:\ArunSpace\RAMS\INTERFACE\bin\Debug\net8.0\INTERFACE.deps.json
+D:\ArunSpace\RAMS\INTERFACE\bin\Debug\net8.0\INTERFACE.dll
+D:\ArunSpace\RAMS\INTERFACE\bin\Debug\net8.0\INTERFACE.pdb
+D:\ArunSpace\RAMS\INTERFACE\bin\Debug\net8.0\MODEL.dll
+D:\ArunSpace\RAMS\INTERFACE\bin\Debug\net8.0\MODEL.pdb
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.csproj.AssemblyReference.cache
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.GeneratedMSBuildEditorConfig.editorconfig
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.AssemblyInfoInputs.cache
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.AssemblyInfo.cs
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.csproj.CoreCompileInputs.cache
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.csproj.Up2Date
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.dll
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\refint\INTERFACE.dll
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\INTERFACE.pdb
+D:\ArunSpace\RAMS\INTERFACE\obj\Debug\net8.0\ref\INTERFACE.dll

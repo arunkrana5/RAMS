@@ -1,0 +1,129 @@
+﻿@{
+    Layout = "_Layout";
+}
+<link href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" rel="stylesheet" />
+<link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
+<link href="~/layout/sweetalert2.min.css" rel="stylesheet" />
+<div class="card">
+    <div class="card-body">
+        <nav>
+            <div class="nav nav-tabs d-flex" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Pending</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Approved</button>
+                <button class="nav-link" id="nav-reject-tab" data-bs-toggle="tab" data-bs-target="#nav-reject" type="button" role="tab" aria-controls="nav-reject" aria-selected="false">Rejected</button>
+                <button id="btn_Approve" class="btn btn-success">Approve</button>
+                <button id="btn_Reject" style="margin-left:10px;" class="btn btn-danger">Reject</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center mb-0" id="tbl_pending">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th><input class="form-check-input checkAll" type="checkbox" name="checkAll">All</th>
+                                    <th>Firm Type</th>
+                                    <th>GST Number</th>
+                                    <th>GST Reg Date</th>
+                                    <th>Owner Name</th>
+                                    <th>Address</th>
+                                    <th>Factory Address</th>
+                                    <th>Serviceable State</th>
+                                    <th>Branding Type</th>
+                                    <th>Manager Details</th>
+                                    <th>Contact Number</th>
+                                    <th>City</th>
+                                    <th>PinCode</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Name As Per Bank</th>
+                                    <th>Account Number</th>
+                                    <th>IFSC</th>
+                                    <th>Bank Branch</th>
+                                    <th>MSME Number</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_pending"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="row">
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center mb-0" id="tbl_approved">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Firm Type</th>
+                                    <th>GST Number</th>
+                                    <th>GST Reg Date</th>
+                                    <th>Owner Name</th>
+                                    <th>Address</th>
+                                    <th>Factory Address</th>
+                                    <th>Serviceable State</th>
+                                    <th>Branding Type</th>
+                                    <th>Manager Details</th>
+                                    <th>Contact Number</th>
+                                    <th>City</th>
+                                    <th>PinCode</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Name As Per Bank</th>
+                                    <th>Account Number</th>
+                                    <th>IFSC</th>
+                                    <th>Bank Branch</th>
+                                    <th>MSME Number</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_approved"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-reject" role="tabpanel" aria-labelledby="nav-reject-tab">
+                <div class="row">
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center mb-0" id="tbl_rejected">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Firm Type</th>
+                                    <th>GST Number</th>
+                                    <th>GST Reg Date</th>
+                                    <th>Owner Name</th>
+                                    <th>Address</th>
+                                    <th>Factory Address</th>
+                                    <th>Serviceable State</th>
+                                    <th>Branding Type</th>
+                                    <th>Manager Details</th>
+                                    <th>Contact Number</th>
+                                    <th>City</th>
+                                    <th>PinCode</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Name As Per Bank</th>
+                                    <th>Account Number</th>
+                                    <th>IFSC</th>
+                                    <th>Bank Branch</th>
+                                    <th>MSME Number</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_rejected"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script><script src="~/layout/sweetalert2.min.js"></script>
+<script src="~/assets/js/custom/enrollmentstatus.js"></script>

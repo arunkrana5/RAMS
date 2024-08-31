@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "_Layout";
+}
+<link href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" rel="stylesheet" />
+<link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.12.4/sweetalert2.min.css" rel="stylesheet" />
+<style>
+    .table > thead {
+        vertical-align: middle;
+    }
+
+    .table{
+
+    }
+</style>
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">Existing Vendor List</div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="table-responsive">
+                <!-- Projects table -->
+                <table class="table align-items-center mb-0 stripe" id="tbl_Vendor">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Action</th>
+                            <th>Firm Type</th>
+                            <th>GST Number</th>
+                            <th>GST Reg Date</th>
+                            <th>Owner Name</th>
+                            <th>Address</th>
+                            <th>Factory Address</th>
+                            <th>Serviceable State</th>
+                            <th>Branding Type</th>
+                            <th>Manager Details</th>
+                            <th>Contact Number</th>
+                            <th>City</th>
+                            <th>PinCode</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Name As Per Bank</th>
+                            <th>Account Number</th>
+                            <th>IFSC</th>
+                            <th>Bank Branch</th>
+                            <th>MSME Number</th>
+                            <th>Created By</th>
+                            <th>Created Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_Vendors">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.12.4/sweetalert2.min.js"></script>
+<script src="~/assets/js/jquery-confirm.js"></script>
+<script src="~/assets/js/custom/vendorlist.js"></script>

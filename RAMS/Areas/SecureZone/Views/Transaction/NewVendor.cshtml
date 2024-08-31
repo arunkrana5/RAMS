@@ -1,0 +1,186 @@
+﻿@{
+    Layout = "_Layout";
+}
+<style>
+    .border-color-red{
+        border-color:red;
+    }
+
+    .table td {
+        text-align: center;
+    }
+
+    table th:last-child {
+        text-align: center;
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<input type="hidden" id="hd_VendorID" value="@ViewBag.ID" />
+<div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
+    <h6 class="page-title" id="headerTitle">Add Vendor</h6>
+
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Firm Name</label>
+                    <input type="text" class="form-control" id="txtFirmName" placeholder="Enter Firm Name" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Firm Type</label>
+                    <select class="form-control" id="ddlFirmType">
+                        <option value="0">-- Select --</option>
+                        <option value="1">Pvt Ltd</option>
+                        <option value="2">Company</option>
+                        <option value="3">Proprietorships</option>
+                        <option value="4">Partnerships</option>
+                        <option value="5">Corporations</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>GST Number</label>
+                    <input type="text" class="form-control" id="txtGSTNumber" placeholder="Enter GST Number" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>GST Registration Date</label>
+                    <input type="date" class="form-control" id="txtGSTRegDate" placeholder="Enter GST Registration Date" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Owner Name</label>
+                    <input type="text" class="form-control" id="txtOwnerName" placeholder="Enter Owner Name" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" id="txtAddress" placeholder="Enter Address" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Factory Address</label>
+                    <input type="text" class="form-control" id="txtFactoryAddress" placeholder="Enter Factory Address" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Serviceable States</label>
+                    <select class="form-control" id="ddlServiceableState">
+                        <option value="0">-- Select --</option>
+                        <option value="1">Delhi</option>
+                        <option value="2">Haryana</option>
+                        <option value="3">UP</option>
+                        <option value="4">JH</option>
+                        <option value="5">BR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Branding Type</label>
+                    <select class="form-control" id="ddlBrandingType">
+                        <option value="0">-- Select --</option>
+                        <option value="1">abc</option>
+                        <option value="2">xyz</option>
+                        <option value="3">123</option>
+                        <option value="4">345</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Manager Details</label>
+                    <input type="text" class="form-control" id="txtManagerDetails" placeholder="Enter Manager Details" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" class="form-control" id="txtContactNumber" placeholder="Enter Contact Number" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" id="txtCity" placeholder="Enter City" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Pin Code</label>
+                    <input type="text" class="form-control" id="txtPinCode" placeholder="Enter PIN Code" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Latitude</label>
+                    <input type="text" class="form-control" id="txtLatitude" placeholder="Enter Latitude" readonly />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Longitude</label>
+                    <input type="text" class="form-control" id="txtLongitude" placeholder="Enter Longitude" readonly />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Name as per Bank</label>
+                    <input type="text" class="form-control" id="txtNameAsPerBank" placeholder="Enter Name as per Bank" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Account Number</label>
+                    <input type="text" class="form-control" id="txtAccountNumber" placeholder="Enter Account Number" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>IFSC</label>
+                    <input type="text" class="form-control" id="txtIFSC" placeholder="Enter IFSC" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Bank Branch</label>
+                    <input type="text" class="form-control" id="txtBankBranch" placeholder="Enter Bank Branch" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>MSME Number</label>
+                    <input type="text" class="form-control" id="txtMSMENumber" placeholder="Enter MSME Number" />
+                </div>
+            </div>
+        </div>
+        <div class="row" id="tbl_VendorDoc"></div>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="IsTermsConditionChecked" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to Terms and Conditions
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer" id="footer">
+        <button class="btn btn-success" id="btn_Submit">Submit</button>
+        <a class="btn btn-danger" href="/SecureZone/Dashboard/Index">Cancel</a>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
+<script src="~/assets/js/custom/dms.js"></script>
+<script src="~/assets/js/custom/addvendor.js"></script>
