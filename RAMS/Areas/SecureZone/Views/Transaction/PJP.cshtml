@@ -1,108 +1,111 @@
 ﻿@{
     Layout = "_Layout";
 }
-<style>
-    .form-group{
-        margin-top: 10px;
-    }
-</style>
-<div class="card">
-    <div class="card-header">
-        <div class="card-title">PJP</div>
+<div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
+    <h6 class="page-title" id="headerTitle">Add PJP</h6>
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+        <a href="@Url.Action("PJPList","Transaction",new {Area="SecureZone"})" class="btn btn-sm btn-outline--primary">
+            <i class="las la-list"></i>List
+        </a>
+        <a onclick="history.back()" class="btn btn-sm btn-outline--primary">
+            <i class="la la-undo"></i> Back
+        </a>
     </div>
+</div>
+<div class="card">
     <div class="card-body">
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Employee</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlUserID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Dealer Category</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlDealerCategoryID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Dealer Type</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlDealerTypeID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Region</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlRegionID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>State</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlStateID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>City</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlCityID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Area</label>
-                    <select class="form-select form-control" id="ddlUserID">
+                    <select class="form-control select2" id="ddlAreaID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                 <label> &nbsp;    </label>
-                <a class="btn btn-success" style="text-align: center; margin-top: 20px;">Search Dealer</a>
+                    <a class="btn btn-success" style="text-align: center; margin-top: 20px;">Search Dealer</a>
             </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Vendor</label>
-                    <select class="form-select form-control" id="ddlVendorID">
+                    <select class="form-control select2" id="ddlVendorID">
                         <option>-- Select --</option>
-                        <option>Arun</option>
-                        <option>Kumar</option>
-                        <option>Rana</option>
+                        <option value="1">Arun</option>
+                        <option value="2">Kumar</option>
+                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
@@ -120,9 +123,9 @@
         <a href="/Dashboard/Requisition" class="btn btn-danger">Cancel</a>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('.select2').select2();
         $('#btn_Submit').on('click', function () { 
             ExecutePJP();
         });

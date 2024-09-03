@@ -1,0 +1,85 @@
+﻿@{
+    Layout = "_Layout";
+}
+<link href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" rel="stylesheet" />
+<div class="d-flex mb-10 flex-wrap justify-content-between align-items-center">
+    <h6 class="page-title">User List</h6>
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+        <a href="@Url.Action("AddUser","Master",new {Area="SecureZone"})" class="btn btn-sm btn--primary"><i class="las la-plus"></i>Add User</a>
+        <a onclick="history.back()" class="btn btn-sm btn--primary">
+            <i class="la la-undo"></i> Back
+        </a>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table align-items-center mb-0 stripe" id="user_table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Action</th>
+                            <th>Firm Type</th>
+                            <th>GST Number</th>
+                            <th>GST Reg Date</th>
+                            <th>Owner Name</th>
+                            <th>Address</th>
+                            <th>Factory Address</th>
+                            <th>Serviceable State</th>
+                            <th>Branding Type</th>
+                            <th>Manager Details</th>
+                            <th>Contact Number</th>
+                            <th>City</th>
+                            <th>PinCode</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Name As Per Bank</th>
+                            <th>Account Number</th>
+                            <th>IFSC</th>
+                            <th>Bank Branch</th>
+                            <th>MSME Number</th>
+                            <th>Created By</th>
+                            <th>Created Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_Vendors">
+                        <tr>
+                            <td><a href="javascript:void(0)"><i class="fa fa-edit"></i></a>&nbsp;<a href="javascript:void(0)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>
+                            <td>Firm Type</td>
+                            <td>GST Number</td>
+                            <td>GST Reg Date</td>
+                            <td>Owner Name</td>
+                            <td>Address</td>
+                            <td>Factory Address</td>
+                            <td>Serviceable State</td>
+                            <td>Branding Type</td>
+                            <td>Manager Details</td>
+                            <td>Contact Number</td>
+                            <td>City</td>
+                            <td>PinCode</td>
+                            <td>Latitude</td>
+                            <td>Longitude</td>
+                            <td>Name As Per Bank</td>
+                            <td>Account Number</td>
+                            <td>IFSC</td>
+                            <td>Bank Branch</td>
+                            <td>MSME Number</td>
+                            <td>Created By</td>
+                            <td>Created Date</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        new DataTable('#user_table');
+    });
+</script>
+
+
+
+

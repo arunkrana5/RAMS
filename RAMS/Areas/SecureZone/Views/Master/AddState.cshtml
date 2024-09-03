@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "_Layout";
+}
+<style>
+    .border-color-red {
+        border-color: red;
+    }
+
+    .table td {
+        text-align: start;
+    }
+
+    table th:last-child {
+        text-align: start;
+    }
+
+    table td:last-child {
+        text-align: start;
+    }
+</style>
+<input type="hidden" id="hd_StateID" value="@ViewBag.ID" />
+<div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
+    <h6 class="page-title" id="headerTitle">Add State</h6>
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+        <a href="@Url.Action("State","Master",new {Area="SecureZone"})" class="btn btn-sm btn--primary">
+            <i class="las la-list"></i>List
+        </a>
+        <a onclick="history.back()" class="btn btn-sm btn--primary">
+            <i class="la la-undo"></i> Back
+        </a>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Region</label>
+                    <select class="form-control applyselect" id="ddlRegion" required>
+                        <option value="0">-- Select --</option>
+                        <option value="1">IND</option>
+                        <option value="2">USA</option>
+                        <option value="3">PAK</option>
+                        <option value="4">BAN</option>
+                        <option value="5">NEP</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>State Code</label>
+                    <input type="text" class="form-control" id="txtCode" placeholder="Enter State Code" required autocomplete="off" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>State Name</label>
+                    <input type="text" class="form-control" id="txtName" placeholder="Enter State Name" required autocomplete="off" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Priority</label>
+                    <input type="number" class="form-control" id="txtPriority" placeholder="Enter Priority" autocomplete="off" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer" id="footer">
+        <button class="btn btn--success" id="btn_Submit">Submit</button>
+        <a class="btn btn--danger" href="/SecureZone/Dashboard/Index">Cancel</a>
+    </div>
+</div>
+<script src="~/js/tostvalidation.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.applyselect').select2();
+    });
+</script>

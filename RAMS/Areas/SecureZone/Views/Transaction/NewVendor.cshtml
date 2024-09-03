@@ -2,23 +2,34 @@
     Layout = "_Layout";
 }
 <style>
-    .border-color-red{
-        border-color:red;
+    .border-color-red {
+        border-color: red;
     }
 
     .table td {
-        text-align: center;
+        text-align: start;
     }
 
     table th:last-child {
-        text-align: center;
+        text-align: start;
+    }
+
+    table td:last-child {
+        text-align: start;
     }
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" rel="stylesheet" />
 <input type="hidden" id="hd_VendorID" value="@ViewBag.ID" />
 <div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
     <h6 class="page-title" id="headerTitle">Add Vendor</h6>
-
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+        <a href="@Url.Action("VendorList","Transaction",new {Area="SecureZone"})" class="btn btn-sm btn--primary">
+            <i class="las la-list"></i>List
+        </a>
+        <a onclick="history.back()" class="btn btn-sm btn--primary">
+            <i class="la la-undo"></i> Back
+        </a>
+    </div>
 </div>
 <div class="card">
     <div class="card-body">
@@ -26,13 +37,13 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Firm Name</label>
-                    <input type="text" class="form-control" id="txtFirmName" placeholder="Enter Firm Name" />
+                    <input type="text" class="form-control" id="txtFirmName" placeholder="Enter Firm Name" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Firm Type</label>
-                    <select class="form-control" id="ddlFirmType">
+                    <select class="form-control applyselect" id="ddlFirmType" required>
                         <option value="0">-- Select --</option>
                         <option value="1">Pvt Ltd</option>
                         <option value="2">Company</option>
@@ -45,37 +56,37 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>GST Number</label>
-                    <input type="text" class="form-control" id="txtGSTNumber" placeholder="Enter GST Number" />
+                    <input type="text" class="form-control GSTINFormat" id="txtGSTNumber" placeholder="Enter GST Number" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>GST Registration Date</label>
-                    <input type="date" class="form-control" id="txtGSTRegDate" placeholder="Enter GST Registration Date" />
+                    <input type="date" class="form-control" id="txtGSTRegDate" placeholder="Enter GST Registration Date" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Owner Name</label>
-                    <input type="text" class="form-control" id="txtOwnerName" placeholder="Enter Owner Name" />
+                    <input type="text" class="form-control" id="txtOwnerName" placeholder="Enter Owner Name" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" class="form-control" id="txtAddress" placeholder="Enter Address" />
+                    <input type="text" class="form-control" id="txtAddress" placeholder="Enter Address" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Factory Address</label>
-                    <input type="text" class="form-control" id="txtFactoryAddress" placeholder="Enter Factory Address" />
+                    <input type="text" class="form-control" id="txtFactoryAddress" placeholder="Enter Factory Address" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Serviceable States</label>
-                    <select class="form-control" id="ddlServiceableState">
+                    <select class="form-control applyselect" id="ddlServiceableState" required>
                         <option value="0">-- Select --</option>
                         <option value="1">Delhi</option>
                         <option value="2">Haryana</option>
@@ -88,7 +99,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Branding Type</label>
-                    <select class="form-control" id="ddlBrandingType">
+                    <select class="form-control applyselect" id="ddlBrandingType" required>
                         <option value="0">-- Select --</option>
                         <option value="1">abc</option>
                         <option value="2">xyz</option>
@@ -100,87 +111,86 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Manager Details</label>
-                    <input type="text" class="form-control" id="txtManagerDetails" placeholder="Enter Manager Details" />
+                    <input type="text" class="form-control" id="txtManagerDetails" placeholder="Enter Manager Details" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Contact Number</label>
-                    <input type="text" class="form-control" id="txtContactNumber" placeholder="Enter Contact Number" />
+                    <input type="text" class="form-control MobileFormat" id="txtContactNumber" placeholder="Enter Contact Number" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>City</label>
-                    <input type="text" class="form-control" id="txtCity" placeholder="Enter City" />
+                    <input type="text" class="form-control" id="txtCity" placeholder="Enter City" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Pin Code</label>
-                    <input type="text" class="form-control" id="txtPinCode" placeholder="Enter PIN Code" />
+                    <input type="text" class="form-control NumericOnly" id="txtPinCode" placeholder="Enter PIN Code" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Latitude</label>
-                    <input type="text" class="form-control" id="txtLatitude" placeholder="Enter Latitude" readonly />
+                    <input type="text" class="form-control" id="txtLatitude" placeholder="Enter Latitude" readonly required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Longitude</label>
-                    <input type="text" class="form-control" id="txtLongitude" placeholder="Enter Longitude" readonly />
+                    <input type="text" class="form-control" id="txtLongitude" placeholder="Enter Longitude" readonly required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Name as per Bank</label>
-                    <input type="text" class="form-control" id="txtNameAsPerBank" placeholder="Enter Name as per Bank" />
+                    <input type="text" class="form-control" id="txtNameAsPerBank" placeholder="Enter Name as per Bank" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Account Number</label>
-                    <input type="text" class="form-control" id="txtAccountNumber" placeholder="Enter Account Number" />
+                    <input type="text" class="form-control" id="txtAccountNumber" placeholder="Enter Account Number" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>IFSC</label>
-                    <input type="text" class="form-control" id="txtIFSC" placeholder="Enter IFSC" />
+                    <input type="text" class="form-control UpperCase IFSCFormat" id="txtIFSC" placeholder="Enter IFSC" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Bank Branch</label>
-                    <input type="text" class="form-control" id="txtBankBranch" placeholder="Enter Bank Branch" />
+                    <input type="text" class="form-control" id="txtBankBranch" placeholder="Enter Bank Branch" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>MSME Number</label>
-                    <input type="text" class="form-control" id="txtMSMENumber" placeholder="Enter MSME Number" />
+                    <input type="text" class="form-control" id="txtMSMENumber" placeholder="Enter MSME Number" required autocomplete="off" />
                 </div>
             </div>
         </div>
         <div class="row" id="tbl_VendorDoc"></div>
-        <div class="row mt-2">
+        <div class="row mt-4">
             <div class="col-md-12">
-                <div class="form-group">
-                    <input class="form-check-input" type="checkbox" value="" id="IsTermsConditionChecked" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Agree to Terms and Conditions
-                    </label>
-                </div>
+                <input class="form-check-input" type="checkbox" value="" id="IsTermsConditionChecked" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to Terms and Conditions
+                </label>
             </div>
         </div>
     </div>
     <div class="card-footer" id="footer">
-        <button class="btn btn-success" id="btn_Submit">Submit</button>
-        <a class="btn btn-danger" href="/SecureZone/Dashboard/Index">Cancel</a>
+        <button class="btn btn--success" id="btn_Submit">Submit</button>
+        <a class="btn btn--danger" href="/SecureZone/Dashboard/Index">Cancel</a>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
 <script src="~/assets/js/custom/dms.js"></script>
+<script src="~/js/tostvalidation.js"></script>
 <script src="~/assets/js/custom/addvendor.js"></script>

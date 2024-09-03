@@ -1,0 +1,41 @@
+﻿<script src="~/layout/bootstrap.bundle.min.js"></script>
+<script src="~/layout/bootstrap-toggle.min.js"></script>
+<script src="~/layout/jquery.slimscroll.min.js"></script>
+<link href="~/layout/izitoast.min.css" rel="stylesheet" />
+<script src="~/layout/izitoast.min.js"></script>
+<script src="~/layout/jquery-confirm.js"></script>
+<script src="~/layout/toastr.min.js"></script>
+<script src="~/layout/sweetalert2.min.js"></script>
+<script>
+    "use strict";
+    function notify(status, message) {
+        iziToast[status]({
+            message: message,
+            position: "topRight"
+        });
+    }
+</script>
+<script src="~/layout/nicedit.js"></script>
+<script src="~/layout/select2.min.js"></script>
+<script src="~/layout/app.js"></script>
+<script>
+    "use strict";
+    bkLib.onDomLoaded(function () {
+        $(".nicEdit").each(function (index) {
+            $(this).attr("id", "nicEditor" + index);
+            new nicEditor({ fullPanel: true }).panelInstance('nicEditor' + index, { hasPanel: true });
+        });
+    });
+    (function ($) {
+        $(document).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain', function () {
+            $('.nicEdit-main').focus();
+        });
+    })(jQuery);
+</script>
+<script>
+    if ($('li').hasClass('active')) {
+        $('#sidebar__menuWrapper').animate({
+            scrollTop: eval($(".active").offset().top - 320)
+        }, 500);
+    }
+</script>

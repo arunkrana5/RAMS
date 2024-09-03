@@ -34,12 +34,76 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xEYXNoYm9hcmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkQXJlYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkQ2l0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddCountry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkQ291bnRyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkRGVwYXJ0bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddDesignation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkRGVzaWduYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddDocumentType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkRG9jdW1lbnRUeXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddRegion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkUmVnaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddState.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkU3RhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQWRkVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/Area.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQXJlYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/City.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQ2l0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/Country.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcQ291bnRyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/Department.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcRGVwYXJ0bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/Designation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcRGVzaWduYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/DocumentType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcRG9jdW1lbnRUeXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/Region.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcUmVnaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/State.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcU3RhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Master/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VjdXJlWm9uZVxWaWV3c1xNYXN0ZXJcVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ArunSpace/RAMS/RAMS/Areas/SecureZone/Views/Transaction/Attendance.cshtml]
@@ -84,6 +148,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ArunSpace/RAMS/RAMS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Views/Shared/_LayoutCSSPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDU1NQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ArunSpace/RAMS/RAMS/Views/Shared/_LayoutJSPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRKU1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ArunSpace/RAMS/RAMS/Views/Shared/_ValidationScriptsPartial.cshtml]

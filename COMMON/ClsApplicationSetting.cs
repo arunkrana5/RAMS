@@ -679,6 +679,10 @@ namespace COMMON
 
             return _mappings.TryGetValue(extension, out mime) ? mime : "application/octet-stream";
         }
-
+        public static string GetIPAddress()
+        {
+            HttpContextAccessor httpContextAccessor = new HttpContextAccessor();
+            return httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+        }
     }
 }

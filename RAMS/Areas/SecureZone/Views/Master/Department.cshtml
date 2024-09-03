@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_Layout";
+}
+<link href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" rel="stylesheet" />
+<style>
+    table td:last-child {
+        text-align: start;
+    }
+</style>
+<div class="d-flex mb-10 flex-wrap justify-content-between align-items-center">
+    <h6 class="page-title">Department List</h6>
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+        <a href="@Url.Action("AddDepartment","Master",new {Area="SecureZone"})" class="btn btn-sm btn--primary"><i class="las la-plus"></i>Add Department</a>
+        <a onclick="history.back()" class="btn btn-sm btn--primary">
+            <i class="la la-undo"></i> Back
+        </a>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table align-items-center mb-0 stripe" id="tbl_Department">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Action</th>
+                            <th>Firm Type</th>
+                            <th>GST Number</th>
+                            <th>GST Reg Date</th>
+                            <th>Created By</th>
+                            <th>Created Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_Vendors">
+                        <tr>
+                            <td><a href="javascript:void(0)"><i class="fa fa-edit"></i></a>&nbsp;<a href="javascript:void(0)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>
+                            <td>Firm Type</td>
+                            <td>GST Number</td>
+                            <td>GST Reg Date</td>
+                            <td>Created By</td>
+                            <td>Created Date</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        new DataTable('#tbl_Department');
+    });
+</script>
+
+
+
+

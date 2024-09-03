@@ -6,7 +6,6 @@
     <title>Thrivera - RMS</title>
     <link rel='shortcut icon' href='~/favicon.ico' type='image/vnd.microsoft.icon' />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="~/lib/jquery-confirm/jquery-confirm.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="~/layout/bootstrap.min.css" rel="stylesheet" />
     <link href="~/layout/bootstrap-toggle.min.css" rel="stylesheet" />
@@ -14,7 +13,9 @@
     <link href="~/layout/line-awesome.min.css" rel="stylesheet" />
     <link href="~/layout/select2.min.css" rel="stylesheet" />
     <link href="~/layout/app.css" rel="stylesheet" />
-    <link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
+    <link href="~/layout/jquery-confirm.css" rel="stylesheet" />
+    <link href="~/layout/toastr.min.css" rel="stylesheet" />
+    <link href="~/layout/sweetalert2.min.css" rel="stylesheet" />
     <style>
         .tr_delete {
             text-decoration: line-through;
@@ -49,11 +50,76 @@
                         <li class="sidebar-menu-item sidebar-dropdown">
                             <a href="javascript:void(0)" class="">
                                 <i class="menu-icon las la-users"></i>
+                                <span class="menu-title">Masters</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Users","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Country","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Country</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Region","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Region</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("State","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">State</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("City","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">City</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Area","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Area</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Department","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Department</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Designation","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Designation</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("DocumentType","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Document Type</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-users"></i>
                                 <span class="menu-title">Attendance</span>
                             </a>
-                            <div class="sidebar-submenu  ">
+                            <div class="sidebar-submenu">
                                 <ul>
-                                    <li class="sidebar-menu-item  ">
+                                    <li class="sidebar-menu-item">
                                         <a href="@Url.Action("Attendance","Transaction",new {area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Add</span>
@@ -68,15 +134,15 @@
                                 <i class="menu-icon las la-users"></i>
                                 <span class="menu-title">Transactions</span>
                             </a>
-                            <div class="sidebar-submenu  ">
+                            <div class="sidebar-submenu">
                                 <ul>
-                                    <li class="sidebar-menu-item  ">
+                                    <li class="sidebar-menu-item">
                                         <a href="@Url.Action("VendorList","Transaction",new {area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Vendors</span>
                                         </a>
                                     </li>
-                                    <li class="sidebar-menu-item  ">
+                                    <li class="sidebar-menu-item">
                                         <a href="@Url.Action("NewVendor","Transaction",new {area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Add Vendors</span>
@@ -84,14 +150,14 @@
                                     </li>
 
 
-                                    <li class="sidebar-menu-item ">
+                                    <li class="sidebar-menu-item">
                                         <a href="@Url.Action("EnrollmentStatus","Transaction",new {area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Enrollment Status</span>
                                         </a>
                                     </li>
 
-                                    <li class="sidebar-menu-item ">
+                                    <li class="sidebar-menu-item">
                                         <a href="@Url.Action("PJP", "Transaction",new {Area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">PJP</span>
@@ -126,11 +192,11 @@
                         </button>
                     </li>
                     <li class="dropdown">
-                        <button type="button" class="" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true"
-                                aria-expanded="false">
+                        <button type="button" class="" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                             <span class="navbar-user">
                                 <span class="navbar-user__thumb">
-                                    <img src="~/assets/media/avatars/300-10.jpg" />
+                                    @*<img src="~/assets/media/avatars/300-10.jpg" />*@
+                                    <i class="fa fa-user"></i>
                                 </span>
                                 <span class="navbar-user__info">
                                     <span class="navbar-user__name">Arun</span>
@@ -173,7 +239,9 @@
     <script src="~/layout/jquery.slimscroll.min.js"></script>
     <link href="~/layout/izitoast.min.css" rel="stylesheet" />
     <script src="~/layout/izitoast.min.js"></script>
-    <script src="~/assets/js/jquery-confirm.js"></script>
+    <script src="~/layout/jquery-confirm.js"></script>
+    <script src="~/layout/toastr.min.js"></script>
+    <script src="~/layout/sweetalert2.min.js"></script>
     <script>
         "use strict";
         function notify(status, message) {
