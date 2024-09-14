@@ -55,7 +55,11 @@ function ViewDocument(docid, filename) {
         method: 'POST',
         dataType: 'JSON',
         data: { id: docid },
+        beforeSend: function () {
+            loader_show();
+        },
         success: function (res) {
+            loader_hide();
             let iframe = '';
             if (res.data == '') {
                 iframe = `<iframe style="height:80vh;width:100%" id="DocumentIframe" src="/SecureZone/UploadDownload/ViewDocument?id=` + docid + `"  frameborder="1"></iframe>`;
@@ -259,8 +263,10 @@ let doc = function () {
                         async: false,
                         beforeSend: function () {
                             doc_obj.previousDoc = {};
+                            loader_show();
                         },
                         success: function (res) {
+                            loader_hide();
                             if (res.data.length != 0) {
                                 doc_obj.previousDoc = res.data;
                                 doc_obj.AddNewAttachment(enableDelete, 1, doc_obj.previousDoc);
@@ -289,11 +295,11 @@ let doc = function () {
                 dataType: 'JSON',
                 beforeSend: function () {
                     doc_obj.DocListObj = {};
-                    $('#overlay').fadeIn();
+                    loader_show();
                 },
                 data: params,
                 success: function (res) {
-                    $('#overlay').fadeOut();
+                    loader_hide();
                     if (res.data.length != 0) {
                         doc_obj.DocList = res.data;
                         $.each(res.data, function (k, v) {
@@ -375,7 +381,13 @@ let doc = function () {
                                                 method: 'POST',
                                                 dataType: 'JSON',
                                                 data: { AttachmentID: attID },
+
+                                                beforeSend: function () {
+                                                    loader_show();
+                                                },
                                                 success: function (res) {
+                                                    console.log(res);
+                                                    loader_hide();
                                                     if (res.data == 4) {
                                                         Swal.fire({
                                                             text: res.message,
@@ -443,6 +455,8 @@ let doc = function () {
                             if (documentTypeID == 0) {
                                 isValid = 0;
                                 $(td).find(".form-control").addClass('border-color-red');
+                                toastr.error("Please Select Document Type");
+                                $(td).find(".form-control").focus();
                                 return false;
                             }
                             else {
@@ -461,6 +475,8 @@ let doc = function () {
                                 if (fileUpload == '' || fileUpload == undefined || fileUpload == NaN) {
                                     isValid = 0;
                                     $(td).find(".form-control").addClass('border-color-red');
+                                    toastr.error("Please Upload the document");
+                                    $(td).find(".form-control").focus();
                                     return false;
                                 }
                                 else {
@@ -581,7 +597,11 @@ let doc = function () {
                     async: false,
                     processData: false,
                     contentType: false,
+                    beforeSend: function () {
+                        loader_show();
+                    },
                     success: function (res) {
+                        loader_hide();
 
                     }
                 });

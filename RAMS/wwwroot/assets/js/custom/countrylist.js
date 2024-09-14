@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    loader_hide();
     GetCountryList();
 });
 function GetCountryList() {
@@ -12,24 +13,40 @@ function GetCountryList() {
         type: 'POST',
         dataType: 'JSON',
         data: { objModel: obj },
+        beforeSend: function () {
+            loader_show();
+        },
         success: function (res) {
+            loader_hide();
             console.log(res);
-            let data = res.Table;
-            let html = ``;
-            $.each(data, function (k, v) {
-                html += `
-                   <tr>
-                       <td><a href="/SecureZone/Master/AddCountry?id=`+ v.MasterID + `"><i class="fa fa-edit"></i></a>&nbsp;<a onclick="DeleteCountry(` + v.MasterID + `)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>
-                       <td>`+ v.Value + `</td>
+            if (res != null) {
+                if (res.Table.length > 0) {
+                    let data = res.Table;
+                    let html = ``;
+                    $.each(data, function (k, v) {
+                        html += `
+                   <tr>`;
+                        if (v.Status.toLowerCase() == "active") {
+                            html += `<td><a onclick="ChangeStatus(` + v.MasterID + `)"><i style="color:lightseagreen; cursor:pointer;" class="fa fa-check-circle"></i></a>&nbsp;<a href="/SecureZone/Master/AddCountry?id=` + v.MasterID + `"><i class="fa fa-edit"></i></a>&nbsp;<a onclick="DeleteCountry(` + v.MasterID + `)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>`;
+                        }
+                        else {
+                            html += `<td><a onclick="ChangeStatus(` + v.MasterID + `)"><i style="color:red; cursor:pointer;" class="fa fa-check-circle"></i></a>&nbsp;<a href="/SecureZone/Master/AddCountry?id=` + v.MasterID + `"><i class="fa fa-edit"></i></a>&nbsp;<a onclick="DeleteCountry(` + v.MasterID + `)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>`;
+                        }
+
+                        html += `<td>` + v.Value + `</td>
                        <td>`+ v.Name + `</td>
                        <td>`+ v.Status + `</td>
-                       <td>`+ v.CreatedDate + `</td>
+                       <td>`+ v.CreatedBy + `</td>
                        <td>`+ v.CreatedDate + `</td>
                     </tr>
                  `;
-            });
-            $('#tbody_Country').html(html);
-
+                    });
+                    $('#tbody_Country').html(html);
+                }
+            }
+            else {
+                $('#tbody_Country').html(``);
+            }
             new DataTable('#tbl_Country');
         }
     })
@@ -38,8 +55,8 @@ function DeleteCountry(id) {
     console.log(id);
     let obj = {};
     obj.Mode = "DELETE_COUNTRY";
-    obj.MasterID = id;
-    obj.Proc = "Spu_DeleteCountry";
+    obj.ID = id;
+    obj.Proc = "Spu_DeleteMaster";
     obj.TableName = "Country";
     obj.GroupID = 0;
     $.confirm({
@@ -56,21 +73,36 @@ function DeleteCountry(id) {
                         method: 'POST',
                         dataType: 'JSON',
                         data: { objModel: obj },
+                        beforeSend: function () {
+                            loader_show();
+                        },
                         success: function (res) {
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                // title: '',
-                                showConfirmButton: false,
-                                allowOutsideClick: false,
-                                html: ` 
-                                    <div>
-                                      <h2>`+ res.Table[0].msg + `</h2>
-                                        <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
-                                        <i class="fa fa-back"></i>Go To List</button>
-                                    </div>
-                                `
-                            });
+                            loader_hide();
+                            console.log(res);
+                            if (res != null) {
+                                if (res.Table[0].Status == -1) {
+                                    toastr.error(res.Table[0].Message);
+                                }
+                                else {
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        // title: '',
+                                        showConfirmButton: false,
+                                        allowOutsideClick: false,
+                                        html: ` 
+                                            <div>
+                                              <h2>`+ res.Table[0].Message + `</h2>
+                                                <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
+                                                <i class="fa fa-back"></i>Go To List</button>
+                                            </div>
+                                        `
+                                    });
+                                }
+                            }
+                            else {
+                                toastr.error("Something went wrong !");
+                            }
                         }
                     });
 
@@ -86,6 +118,74 @@ function DeleteCountry(id) {
         }
     });
 };
+
+function ChangeStatus(id) {
+    console.log(id);
+    let obj = {};
+    obj.ID = id;
+    obj.Proc = "Spu_ChangeStatusMaster";
+    obj.TableName = "Country";
+    obj.GroupID = 0;
+    $.confirm({
+        title: 'Confirm!',
+        content: 'Are you sure! You want to Change Status?',
+        buttons: {
+            Yes: {
+                text: 'Yes',
+                btnClass: 'btn-green',
+                keys: ['enter', 'y'],
+                action: function () {
+                    $.ajax({
+                        url: '/SecureZone/Master/ExecuteMaster',
+                        method: 'POST',
+                        dataType: 'JSON',
+                        data: { objModel: obj },
+                        beforeSend: function () {
+                            loader_show();
+                        },
+                        success: function (res) {
+                            loader_hide();
+                            console.log(res);
+                            if (res != null) {
+                                if (res.Table[0].Status == -1) {
+                                    toastr.error(res.Table[0].Message);
+                                }
+                                else {
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        // title: '',
+                                        showConfirmButton: false,
+                                        allowOutsideClick: false,
+                                        html: ` 
+                                            <div>
+                                              <h2>`+ res.Table[0].Message + `</h2>
+                                                <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
+                                                <i class="fa fa-back"></i>Go To List</button>
+                                            </div>
+                                        `
+                                    });
+                                }
+                            }
+                            else {
+                                toastr.error("Something went wrong !");
+                            }
+                        }
+                    });
+
+                }
+            },
+            No: {
+                text: 'No',
+                btnClass: 'btn-red',
+                keys: ['esc', 'n'],
+                action: function () {
+                }
+            },
+        }
+    });
+};
+
 function onSwalBtnClicked(btnId) {
     // Swal.close
     switch (btnId) {
@@ -93,7 +193,7 @@ function onSwalBtnClicked(btnId) {
             window.location.reload();
             break;
         case 'list':
-            window.location.href = "/SecureZone/Transaction/VendorList";
+            window.location.href = "/SecureZone/Master/Country";
             break;
         default:
     }

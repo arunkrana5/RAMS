@@ -1,70 +1,373 @@
 ﻿@{
     Layout = "_Layout";
 }
-<div class="d-flex mb-30 flex-wrap gap-3 justify-content-between align-items-center">
+<div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
     <h6 class="page-title">Dashboard</h6>
 
 </div>
-<div class="row gy-4">
-    <div class="card">
-        <div class="card-body">
-            <div class="tab-content m-2">
-                <div class="row gy-4">
-                    <div class="col-xxl-3 col-sm-6">
+<div class="card">
+    <div class="card-body">
+        <div class="tab-content m-2">
+            <div class="row gy-4">
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("VendorList","Transaction", new {Area="SecureZone"})">
                         <div class="widget-two box--shadow2 b-radius--5 bg--blue">
+                            <i class="lar la-address-card overlay-icon text--white"></i>
                             <div class="widget-two__icon b-radius--5 border border--white text--white">
-                                <i class="las la-user-cog"></i>
+                                <i class="las la-list-ol"></i>
                             </div>
                             <div class="widget-two__content">
                                 <h3 class="text--white" id=""></h3>
                                 <p class="text--white">Vendors</p>
                             </div>
-                            <a href="@Url.Action("VendorList","Transaction", new {Area="SecureZone"})" class="widget-two__btn border border--white btn-outline--primary text--white">View All</a>
                         </div>
-                    </div>
-                    <div class="col-xxl-3 col-sm-6">
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("NewVendor","Transaction",new {Area="SecureZone"})">
                         <div class="widget-two box--shadow2 b-radius--5 bg--green">
                             <i class="lar la-paper-plane overlay-icon text--white"></i>
                             <div class="widget-two__icon b-radius--5 border border--white text--white">
-                                <i class="lar la-paper-plane"></i>
+                                <i class="las la-user-plus"></i>
                             </div>
                             <div class="widget-two__content">
                                 <h3 class="text--white" id="Vendor_L1"></h3>
                                 <p class="text--white">Add Vendors</p>
                             </div>
-                            <a href="@Url.Action("NewVendor","Transaction",new {Area="SecureZone"})" class="widget-two__btn border border--white text--white btn-outline--success">View All</a>
                         </div>
-                    </div>
+                    </a>
+                </div>
 
-                    <div class="col-xxl-3 col-sm-6">
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Attendance","Transaction",new {Area="SecureZone"})">
                         <div class="widget-two box--shadow2 b-radius--5 bg--pink">
                             <i class="las la-percent overlay-icon text--white"></i>
                             <div class="widget-two__icon b-radius--5 border border--white text--white">
-                                <i class="lar la-credit-card"></i>
+                                <i class="las la-fingerprint"></i>
                             </div>
                             <div class="widget-two__content">
                                 <h3 class="text-white" id="Vendor_L2"></h3>
                                 <p class="text-white">Attendance</p>
                             </div>
-                            <a href="javascript:void(0);" class="widget-two__btn border border--white text-white btn-outline--warning">View All</a>
                         </div>
-                    </div>
-                    <div class="col-xxl-3 col-sm-6">
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("PJP","Transaction",new {Area="SecureZone"})">
                         <div class="widget-two box--shadow2 b-radius--5 bg--brown">
                             <i class="lar la-paper-plane overlay-icon text--white"></i>
                             <div class="widget-two__icon b-radius--5 border border--white text--white">
-                                <i class="fa fa-paper-plane"></i>
+                                <i class="las la-plane-departure"></i>
                             </div>
                             <div class="widget-two__content">
                                 <h3 class="text-white" id="Vendor_L3"></h3>
                                 <p class="text-white">PJP</p>
                             </div>
-                            <a href="javascript:void(0);" class="widget-two__btn border border--white text-white btn-outline--primary">View All</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Country","Master", new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--blue">
+                            <i class="lar la-address-card overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-flag"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id=""></h3>
+                                <p class="text--white">Country Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Region","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--green">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-home"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">Region Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("State","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--pink">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-campground"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">State Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("City","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--brown">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-city"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text-white" id="Vendor_L3"></h3>
+                                <p class="text-white">City Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Area","Master", new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--blue">
+                            <i class="lar la-address-card overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-store-alt"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id=""></h3>
+                                <p class="text--white">Area Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Department","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--green">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-chart-pie"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">Department Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Designation","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--pink">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-certificate"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">Designation Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("DocumentType","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--brown">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="lar la-file"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">Document Type Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("BrandingType","Master", new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--blue">
+                            <i class="lar la-address-card overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-bold"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id=""></h3>
+                                <p class="text--white">Branding Type Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("Role","Master", new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--green">
+                            <i class="lar la-address-card overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-user-tag"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id=""></h3>
+                                <p class="text--white">Role Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("VendorType","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--pink">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="las la-certificate"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">Vendor Type Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-3 col-sm-6">
+                    <a href="@Url.Action("VendorCategory","Master",new {Area="SecureZone"})">
+                        <div class="widget-two box--shadow2 b-radius--5 bg--brown">
+                            <i class="lar la-paper-plane overlay-icon text--white"></i>
+                            <div class="widget-two__icon b-radius--5 border border--white text--white">
+                                <i class="lar la-file"></i>
+                            </div>
+                            <div class="widget-two__content">
+                                <h3 class="text--white" id="Vendor_L1"></h3>
+                                <p class="text--white">Vendor Category Master</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6 col-xs-12 my-2 clsm-1 my-1">
+                    <div class="card   rl-border-5 dashSSR-profile ssrTarget"> 
+                        <div class="card-body ">
+                            <div class="row gx-2">
+                                <div class="col-xl-12 col-md-12 col-sm-8 col-8 my-2 px-2  my-1 ssrName">
+                                    <div class="d-block   border-0 text-center px-0  px-4">
+                                        <h4 class="text-center mb-2"><b> RAJ SINGH  (BSRD105464)  </b></h4> 
+                                        <p class="crdtxt">Are are assigned to<br><strong>Thakur Trading  (DEL-471)</strong></p> 
+                                    </div>
+                                </div>
+                                <div class="col-12 ssrmenu">
+                                    <div class="row px-2 py-2">
+                                        <div class="col-6">
+                                            <a class="btn btn--primary btn-block mr-3" href="/Profile"><i class="fe fe-repeat"></i> View Profile</a> 
+                                        </div> 
+                                        <div class="col-6">
+                                            <a id="btn_MarkAttendace" class="btn btn--success btn-block"><i class="fe fe-plus"></i> Site In</a> 
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+<script src="~/assets/js/custom/common.js"></script>
+<script src="~/js/webcam.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#btn_MarkAttendace').on('click', function () {
+            MarkAttendence();
+        });
+        
+
+        loader_hide();
+    });
+    function MarkAttendence() {
+
+        $.ajax({
+            url: "/SecureZone/Dashboard/MarkAttendence",
+            type: "Get",
+            success: function (data) {
+                $("#MTargetDiv").empty();
+                $("#MTargetDiv").html(data);
+                $('#MarkAttendenceModal').modal({
+                    backdrop: 'static',
+                    keyboard: false
+                });
+            },
+            error: function (er) {
+                alert(er);
+
+            }
+        });
+    }
+
+
+    function MarkAttendenceOnSuccess(obj) {
+        if (obj.Status) {
+            SuccessToaster(obj.SuccessMessage);
+            window.location.reload(true);
+        }
+        else {
+            CloseLoadingDialog();
+            FailToaster(obj.SuccessMessage);
+            if (obj.StatusCode == 10 || obj.StatusCode == 20 || obj.StatusCode == 40) {
+                $("#flagDiv").show();
+                $("#spnFlag").html(obj.SuccessMessage);
+                $("#Flag_Doctype").val(obj.AdditionalMessage);
+            }
+
+        }
+    }
+
+    function ShowMasterDetails(obj) {
+        var Name = $(obj).closest("tr").find("input:hidden[name=N]").val();
+        var ID = $(obj).closest("tr").find("input:hidden[name=I]").val();
+        var Doctype = $(obj).attr('OP');
+        $(".spnDetails").html(Name);
+        $.ajax({
+            url: "/CommonAjax/_MasterDetails",
+            type: "Get",
+            data: { src: EncryptJSON(@ViewBag.MenuID+"*" + "/CommonAjax/_MasterDetails" + "*" + ID + "*" + Doctype) },
+            success: function (data) {
+                $("#TargetDetailsDiv").empty();
+                $("#TargetDetailsDiv").html(data);
+                $('#MasterDetailsModal').modal({
+                    backdrop: 'static',
+                    keyboard: false
+                })
+            },
+            error: function (er) {
+                alert(er);
+
+            }
+        });
+    }
+    var myCameraElements;
+    function OpenCamera(obj, facingMode = "") {
+        myCameraElements = $(obj);
+        if (facingMode == "") {
+            facingMode = "user";
+        } else {
+            facingMode = "environment";
+        }
+        Webcam.set({
+            width: 800,
+            height: 1000,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+
+        Webcam.set('constraints', {
+            facingMode: facingMode
+        });
+        Webcam.attach('#CameraScreen');
+
+        $('#CaptureImageModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+    }
+
+    function TakePhoto() {
+        var target = $(myCameraElements).closest("div");
+        //            var Count = $("#hdnCameraCount").val();
+        Webcam.snap(function (data_uri) {
+            $(target).find('img').attr("src", data_uri);
+            $(target).find("input:hidden").val(data_uri);
+            Webcam.reset('#CameraScreen');
+            $('#CaptureImageModal').modal('hide');
+        });
+    }
+</script>

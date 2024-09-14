@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "_Layout";
+}
+<style>
+    .table td:last-child {
+        text-align: left;
+    }
+</style>
+<link href="~/layout/jquery-ui.css" rel="stylesheet" />
+<link href="~/layout/toastr.min.css" rel="stylesheet" />
+<div class="d-flex mb-30 flex-wrap gap-3 justify-content-between align-items-center">
+    <h6 class="page-title">My Profile</h6>
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+        <a href="javascript:void(0);" onclick="history.back()" class="btn btn-sm btn--primary">
+            <i class="la la-undo"></i> Back
+        </a>
+    </div>
+</div>
+<!-- Main content -->
+<div class="card mt-30">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card-body box-profile">
+                    <div class="text-center">
+                        <i class="lar la-user-circle" style="font-size: 350px;"></i>
+                    </div>
+                    <h3 class="profile-username text-center">
+                        <label>Arun Kumar Rana</label>
+                    </h3>
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card-header">
+                                    <h3 class="card-title">Personal Details</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-hover text-nowrap table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>Full Name</td>
+                                                <td>Arun Kumar Rana</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>arun.rana@thrivera.in</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone</td>
+                                                <td>6204010212 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Reporting To</td>
+                                                <td>Manager</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Designation</td>
+                                                <td>Manager</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date Of Birth</td>
+                                                <td>--</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-header">
+                                    <h3 class="card-title">Organizational Details</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-hover text-nowrap table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>Date Of Joining</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Department</td>
+                                                <td>PRD Production</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<script src="~/layout/jquery-ui.js"></script>
+<script src="~/layout/toastr.min.js"></script>
+<script>
+    $(document).ready(function () {
+        loader_hide();
+    });
+</script>

@@ -1,0 +1,52 @@
+﻿
+<div class="modal-content modal-content-demo">
+    <div class="modal-header">
+        <h6 class="modal-title">Clock In  </h6>
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="MyClockDisplay" class="clock">
+                    <span class="spnlivedate"></span>
+                </div>
+            </div>
+            <div class="col-lg-6 form-group">
+                <label>
+                    Attendence <sup>*</sup>
+                </label>
+
+            </div>
+
+            <div class="col-lg-6 form-group" style="display:none;">
+                <label>Location  <sup>*</sup></label>
+            </div>
+
+
+            <div class="col-lg-12 form-group">
+                <label>Note </label>
+            </div>
+
+
+
+            <div class="col-lg-12 form-group camerabtn">
+                <a title="click here for open camera" onclick="OpenCamera(this)" style="color: #fff">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="col-lg-12 form-group" id="flagDiv" style="display:none">
+                <label id="spnFlag"></label>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a id="btnSendLocation" class="btn btn-indigo">Refresh Location</a>
+        <button class="btn btn-indigo" type="submit">Submit</button>
+        <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+    </div>
+</div>
+

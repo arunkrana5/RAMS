@@ -1,0 +1,589 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\RAMS.bundle.scp.css",
+      "PackagePath": "staticwebassets\\RAMS.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_30c2da6f-8916-44d1-9bdf-6eddc6e9e80e.jpeg",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_30c2da6f-8916-44d1-9bdf-6eddc6e9e80e.jpeg"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_31e79376-2a4e-4006-8ea2-a30b797f5e79.jpeg",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_31e79376-2a4e-4006-8ea2-a30b797f5e79.jpeg"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_628a1bb6-e33e-42e2-9638-da178a2b6564.css",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_628a1bb6-e33e-42e2-9638-da178a2b6564.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_80ead2dc-c106-432c-a643-17bb9dc06a69.jpeg",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_80ead2dc-c106-432c-a643-17bb9dc06a69.jpeg"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_ad87bc49-2298-46cc-8bc0-06a8c19cd314.jpeg",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_ad87bc49-2298-46cc-8bc0-06a8c19cd314.jpeg"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_b07fa673-afa8-4217-91dc-5a3861ba5f90.txt",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_b07fa673-afa8-4217-91dc-5a3861ba5f90.txt"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_cc76bd16-d9e7-45ea-ad0d-582abda78e72.txt",
+      "PackagePath": "staticwebassets\\Attachments\\VENDORATTACHMENTS\\VENDORATTACHMENTS_cc76bd16-d9e7-45ea-ad0d-582abda78e72.txt"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\css\\jquery-confirm.css",
+      "PackagePath": "staticwebassets\\assets\\css\\jquery-confirm.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\css\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\assets\\css\\jquery-ui.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\css\\plugins.bundle.css",
+      "PackagePath": "staticwebassets\\assets\\css\\plugins.bundle.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\css\\style.bundle.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.bundle.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addarea.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addarea.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addbrandingtype.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addbrandingtype.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addcity.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addcity.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addcountry.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addcountry.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\adddepartment.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\adddepartment.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\adddesignation.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\adddesignation.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\adddocumenttype.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\adddocumenttype.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addregion.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addregion.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addrole.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addrole.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addstate.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addstate.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\adduser.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\adduser.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\addvendor.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\addvendor.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\arealist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\arealist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\brandingtypelist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\brandingtypelist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\citylist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\citylist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\common.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\common.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\countrylist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\countrylist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\departmentlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\departmentlist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\designationlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\designationlist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\dms.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\dms.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\documenttypelist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\documenttypelist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\enrollmentstatus.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\enrollmentstatus.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\landing.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\landing.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\login.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\login.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\regionlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\regionlist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\rolelist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\rolelist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\statelist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\statelist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\userlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\userlist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\vendorlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\vendorlist.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\custom\\widgets.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\widgets.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\plugins.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins.bundle.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\scripts.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\scripts.bundle.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\js\\widgets.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\widgets.bundle.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\media\\Spinner-5.gif",
+      "PackagePath": "staticwebassets\\assets\\media\\Spinner-5.gif"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\media\\bg4.jpg",
+      "PackagePath": "staticwebassets\\assets\\media\\bg4.jpg"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\assets\\thrivera.jpeg",
+      "PackagePath": "staticwebassets\\assets\\thrivera.jpeg"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\la-brands-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\la-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\la-brands-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\la-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\la-regular-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\la-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\la-regular-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\la-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\la-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fonts\\la-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\fonts\\la-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fonts\\la-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\js\\WebCam.js",
+      "PackagePath": "staticwebassets\\js\\WebCam.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\js\\tostvalidation.js",
+      "PackagePath": "staticwebassets\\js\\tostvalidation.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\all.min.css",
+      "PackagePath": "staticwebassets\\layout\\all.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\app.css",
+      "PackagePath": "staticwebassets\\layout\\app.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\app.js",
+      "PackagePath": "staticwebassets\\layout\\app.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\bootstrap-toggle.min.css",
+      "PackagePath": "staticwebassets\\layout\\bootstrap-toggle.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\bootstrap-toggle.min.js",
+      "PackagePath": "staticwebassets\\layout\\bootstrap-toggle.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\layout\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\layout\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\iziToast.min.css",
+      "PackagePath": "staticwebassets\\layout\\iziToast.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\iziToast.min.js",
+      "PackagePath": "staticwebassets\\layout\\iziToast.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\jquery-confirm.css",
+      "PackagePath": "staticwebassets\\layout\\jquery-confirm.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\jquery-confirm.js",
+      "PackagePath": "staticwebassets\\layout\\jquery-confirm.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\layout\\jquery-ui.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\jquery-ui.js",
+      "PackagePath": "staticwebassets\\layout\\jquery-ui.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\jquery.slimscroll.min.js",
+      "PackagePath": "staticwebassets\\layout\\jquery.slimscroll.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\line-awesome.min.css",
+      "PackagePath": "staticwebassets\\layout\\line-awesome.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\nicEdit.js",
+      "PackagePath": "staticwebassets\\layout\\nicEdit.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\select2.min.css",
+      "PackagePath": "staticwebassets\\layout\\select2.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\select2.min.js",
+      "PackagePath": "staticwebassets\\layout\\select2.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\layout\\sweetalert2.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\layout\\sweetalert2.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\toastr.min.css",
+      "PackagePath": "staticwebassets\\layout\\toastr.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\layout\\toastr.min.js",
+      "PackagePath": "staticwebassets\\layout\\toastr.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\ArunSpace\\RAMS\\RAMS\\wwwroot\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.RAMS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.RAMS.props",
+      "PackagePath": "build\\RAMS.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.RAMS.props",
+      "PackagePath": "buildMultiTargeting\\RAMS.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.RAMS.props",
+      "PackagePath": "buildTransitive\\RAMS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

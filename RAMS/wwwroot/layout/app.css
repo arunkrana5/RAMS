@@ -1620,7 +1620,7 @@ p, li, span {
 }
 
 .page-wrapper {
-    min-height: 100vh;
+    min-height: 93vh;
 }
 
 /* global css end */
@@ -4705,7 +4705,7 @@ th.w-85 {
     border-right: 1px solid #66666675;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -300px;
     height: 100%;
     z-index: 999;
     -webkit-transition: all 0.3s;
@@ -5174,7 +5174,7 @@ th.w-85 {
     position: relative;
     background: #ffffff;
     padding: 15px 30px;
-    margin-left: 250px;
+    /*margin-left: 250px;*/
     border-bottom: 1px solid #dee4ec;
     display: -ms-flexbox;
     display: flex;
@@ -5958,7 +5958,7 @@ th.w-85 {
 /* navbar-wrapper css end */
 /* body-wrapper css start */
 .body-wrapper {
-    margin-left: 250px;
+    /*margin-left: 250px;*/
     padding: 16px;
     transition: all 0.5s cubic-bezier(0.4, -0.25, 0.25, 1.1);
 }

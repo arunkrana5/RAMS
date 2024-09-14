@@ -10,7 +10,7 @@
 <div class="d-flex mb-10 flex-wrap justify-content-between align-items-center">
     <h6 class="page-title">Designation List</h6>
     <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
-        <a href="@Url.Action("AddDesignation","Master",new {Area="SecureZone"})" class="btn btn-sm btn--primary"><i class="las la-plus"></i>Add Designation</a>
+        <a href="@Url.Action("AddDesignation","Master",new {Area="SecureZone"})" class="btn btn-sm btn--primary"><i class="las la-plus"></i>Add</a>
         <a onclick="history.back()" class="btn btn-sm btn--primary">
             <i class="la la-undo"></i> Back
         </a>
@@ -24,34 +24,21 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>Action</th>
-                            <th>Firm Type</th>
-                            <th>GST Number</th>
-                            <th>GST Reg Date</th>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Status</th>
                             <th>Created By</th>
                             <th>Created Date</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody_Vendors">
-                        <tr>
-                            <td><a href="javascript:void(0)"><i class="fa fa-edit"></i></a>&nbsp;<a href="javascript:void(0)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>
-                            <td>Firm Type</td>
-                            <td>GST Number</td>
-                            <td>GST Reg Date</td>
-                            <td>Created By</td>
-                            <td>Created Date</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tbody_Designation"></tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
 <script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
-<script>
-    $(document).ready(function () {
-        new DataTable('#tbl_Designation');
-    });
-</script>
+<script src="~/assets/js/custom/designationlist.js"></script>
 
 
 

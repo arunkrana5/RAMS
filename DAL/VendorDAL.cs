@@ -41,6 +41,8 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@IFSC", model.IFSC);
                     cmd.Parameters.AddWithValue("@BankBranch", model.BankBranch);
                     cmd.Parameters.AddWithValue("@MSMENumber", model.MSMENumber);
+                    cmd.Parameters.AddWithValue("@RouteNumber", model.RouteNumber);
+                    cmd.Parameters.AddWithValue("@RouteType", model.RouteType);
                     cmd.Parameters.AddWithValue("@IsTermsConditionChecked", model.IsTermsConditionChecked);
                     if (model.VendorID != null)
                         cmd.Parameters.AddWithValue("@VendorID", string.Join(",", model.VendorID));

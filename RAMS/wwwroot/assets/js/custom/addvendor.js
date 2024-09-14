@@ -1,11 +1,15 @@
 ﻿let vendordoc = doc();
 $(document).ready(function () {
+    let stateddl = GetDropDownList('', 'AllState');
+    let brandingtypeddl = GetDropDownList('', 'BrandingType');
+    $('#ddlServiceableState').html(stateddl);
+    $('#ddlBrandingType').html(brandingtypeddl);
     $('.applyselect').select2();
-    elmToastValidate('','NumericOnly');
-    elmToastValidate('','GSTINFormat');
-    elmToastValidate('','MobileFormat');
-    elmToastValidate('','UpperCase');
-    elmToastValidate('','IFSCFormat');
+    elmToastValidate('', 'NumericOnly');
+    elmToastValidate('', 'GSTINFormat');
+    elmToastValidate('', 'MobileFormat');
+    elmToastValidate('', 'UpperCase');
+    elmToastValidate('', 'IFSCFormat');
     $('#btn_Submit').on('click', function () {
         ExecuteVendor("Insert");
     });
@@ -39,6 +43,7 @@ $(document).ready(function () {
             alert("Geolocation is not supported by this browser.");
         }
     }
+    loader_hide();
 });
 function ExecuteVendor(mode) {
     let isvalid = 1;
@@ -100,7 +105,13 @@ function ExecuteVendor(mode) {
     if (isvalid == 1) {
         isvalid = elmToastValidate('txtMSMENumber', 'text', 'Please Enter MSME Number');
     }
-    if (isvalid==1) {
+    if (isvalid == 1) {
+        isvalid = elmToastValidate('txtRouteNumber', 'text', 'Please Enter Route Number');
+    }
+    if (isvalid == 1) {
+        isvalid = elmToastValidate('ddlRouteType', 'select', 'Please Select Route Type');
+    }
+    if (isvalid == 1) {
         if ($('#IsTermsConditionChecked').prop('checked') == true) {
             isvalid = 1;
         }
@@ -135,30 +146,45 @@ function ExecuteVendor(mode) {
         obj.MSMENumber = $('#txtMSMENumber').val();
         obj.IsTermsConditionChecked = $('#IsTermsConditionChecked').prop('checked');
         obj.Mode = mode;
+        obj.RouteNumber = $('#txtRouteNumber').val();
+        obj.RouteType = $('#ddlRouteType').val();
         console.log(obj);
         $.ajax({
             url: '/SecureZone/Transaction/ExecuteVendor',
             type: 'POST',
             dataType: 'JSON',
             data: { objModel: obj },
+            beforeSend: function () {
+                loader_show();
+            },
             success: function (res) {
+                loader_hide();
                 console.log(res);
-                vendordoc.init_upload(res.Table[0].ID);
-
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    // title: '',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    html: ` 
-                        <div>
-                          <h2>`+ res.Table[0].msg + `</h2>
-                            <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
-                            <i class="fa fa-back"></i>Go To List</button>
-                        </div>
-                    `
-                });
+                if (res != null) {
+                    if (res.Table[0].ID > 0) {
+                        vendordoc.init_upload(res.Table[0].ID);
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            // title: '',
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            html: ` 
+                                <div>
+                                  <h2>`+ res.Table[0].msg + `</h2>
+                                    <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
+                                    <i class="fa fa-back"></i>Go To List</button>
+                                </div>
+                            `
+                        });
+                    }
+                    else {
+                        toastr.error("Something went wrong !");
+                    }
+                }
+                else {
+                    toastr.error("Something went wrong !");
+                }
             }
         })
     }
@@ -173,45 +199,61 @@ function GetVendorByID() {
         type: 'POST',
         dataType: 'JSON',
         data: { objModel: obj },
+        beforeSend: function () {
+            loader_show();
+        },
         success: function (res) {
-            let data = res.Table[0];
-            $('.applyselect').select2("destroy");
-            $('#txtFirmName').val(data.FirmName);
-            $('#ddlFirmType').val(data.FirmTypeID);
-            $('#txtGSTNumber').val(data.GSTNumber);
-            $('#txtGSTRegDate').val(data.GSTRegDate);
-            $('#txtOwnerName').val(data.OwnerName);
-            $('#txtAddress').val(data.Address);
-            $('#txtFactoryAddress').val(data.FactoryAddress);
-            $('#ddlServiceableState').val(data.ServiceableStateID);
-            $('#ddlBrandingType').val(data.BrandingTypeID);
-            $('#txtManagerDetails').val(data.ManagerDetails);
-            $('#txtContactNumber').val(data.ContactNumber);
-            $('#txtCity').val(data.City);
-            $('#txtPinCode').val(data.PinCode);
-            $('#txtLatitude').val(data.Latitude);
-            $('#txtLongitude').val(data.Longitude);
-            $('#txtNameAsPerBank').val(data.NameAsPerBank);
-            $('#txtAccountNumber').val(data.AccountNumber);
-            $('#txtIFSC').val(data.IFSC);
-            $('#txtBankBranch').val(data.BankBranch);
-            $('#txtMSMENumber').val(data.MSMENumber);
-            $('#hd_VendorID').val(data.ID);
-            $(".applyselect").select2();
-            if (data.IsTermsConditionChecked == 1) {
-                obj.IsTermsConditionChecked = $('#IsTermsConditionChecked').prop('checked', true);
+            loader_hide();
+            if (res != null) {
+                let data = res.Table[0];
+                if (data != null) {
+                    $('.applyselect').select2("destroy");
+                    $('#txtFirmName').val(data.FirmName);
+                    $('#ddlFirmType').val(data.FirmTypeID);
+                    $('#txtGSTNumber').val(data.GSTNumber);
+                    $('#txtGSTRegDate').val(data.GSTRegDate);
+                    $('#txtOwnerName').val(data.OwnerName);
+                    $('#txtAddress').val(data.Address);
+                    $('#txtFactoryAddress').val(data.FactoryAddress);
+                    $('#ddlServiceableState').val(data.ServiceableStateID);
+                    $('#ddlBrandingType').val(data.BrandingTypeID);
+                    $('#txtManagerDetails').val(data.ManagerDetails);
+                    $('#txtContactNumber').val(data.ContactNumber);
+                    $('#txtCity').val(data.City);
+                    $('#txtPinCode').val(data.PinCode);
+                    $('#txtLatitude').val(data.Latitude);
+                    $('#txtLongitude').val(data.Longitude);
+                    $('#txtNameAsPerBank').val(data.NameAsPerBank);
+                    $('#txtAccountNumber').val(data.AccountNumber);
+                    $('#txtIFSC').val(data.IFSC);
+                    $('#txtBankBranch').val(data.BankBranch);
+                    $('#txtMSMENumber').val(data.MSMENumber);
+                    $('#txtRouteNumber').val(data.RouteNumber);
+                    $('#ddlRouteType').val(data.RouteType);
+                    $('#hd_VendorID').val(data.ID);
+                    $(".applyselect").select2();
+                    if (data.IsTermsConditionChecked == 1) {
+                        obj.IsTermsConditionChecked = $('#IsTermsConditionChecked').prop('checked', true);
+                    }
+                    else {
+                        obj.IsTermsConditionChecked = $('#IsTermsConditionChecked').prop('checked', false);
+                    }
+                    $('#headerTitle').html("Update Vendor");
+                    $('#footer').html(`<button class="btn btn--success" id="btn_Update">Update</button>
+    <a class="btn btn--danger" href="/SecureZone/Dashboard/Index">Cancel</a>`);
+
+                    vendordoc.init(1, 'VENDOR_CREATION', 'tbl_VendorDoc', 1, 1, $('#hd_VendorID').val());
+                    $('#btn_Update').on('click', function () {
+                        ExecuteVendor("Update");
+                    });
+
+                } else {
+                    toastr.error("Something went wrong");
+                }
             }
             else {
-                obj.IsTermsConditionChecked = $('#IsTermsConditionChecked').prop('checked', false);
+                toastr.error("Something went wrong");
             }
-            $('#headerTitle').html("Update Vendor");
-            $('#footer').html(`<button class="btn btn-success" id="btn_Update">Update</button>
-    <a class="btn btn-danger" href="/SecureZone/Dashboard/Index">Cancel</a>`);
-
-            vendordoc.init(1, 'VENDOR_CREATION', 'tbl_VendorDoc', 1, 1, $('#hd_VendorID').val());
-            $('#btn_Update').on('click', function () {
-                ExecuteVendor("Update");
-            });
         }
     });
 }

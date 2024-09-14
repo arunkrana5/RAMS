@@ -10,49 +10,151 @@ namespace RAMS.Areas.SecureZone.Controllers
     [Area("SecureZone")]
     public class TransactionController : Controller
     {
-        IVendorsHelper vendor; 
+        IVendorsHelper vendor;
+        IPJPHelper pjp;
         public TransactionController()
-        { 
+        {
             vendor = new VendorDAL();
+            pjp = new PJPDAL();
         }
         public IActionResult PJP()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
+        }
+        public IActionResult PJPPlanList()
+        {
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult NewVendor(int? id)
         {
-            ViewBag.ID = Convert.ToInt64(id);
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                ViewBag.ID = Convert.ToInt64(id);
+                return View();
+            }
         }
         public IActionResult VendorList()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult EnrollmentStatus()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult Attendance()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult ProjectList()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult NewTask()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult TaskList()
         {
-            return View();
+            string RoleName = ClsApplicationSetting.GetSessionValue("RoleName");
+            if (String.IsNullOrEmpty(RoleName))
+            {
+                return RedirectToAction("PageNotFound", "Account", new { Area = "Authentication" });
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public string ExecuteVendor(VendorModel objModel)
-        { 
-            string str = JsonConvert.SerializeObject(vendor.ExecuteVendor(objModel));
-            return str;
+        {
+            try
+            {
+                objModel.CreatedBy = Convert.ToInt32(ClsApplicationSetting.GetSessionValue("LoginID"));
+                objModel.IPAddress = ClsApplicationSetting.GetIPAddress();
+                string str = JsonConvert.SerializeObject(vendor.ExecuteVendor(objModel));
+                return str;
+            }
+            catch (Exception)
+            {
+                return "";
+            } 
+        }
+        [HttpPost]
+        public string ExecutePJPPlan(PJPPlanModel objModel)
+        {
+            try
+            {
+                objModel.CreatedBy = Convert.ToInt32(ClsApplicationSetting.GetSessionValue("LoginID"));
+                objModel.IPAddress = ClsApplicationSetting.GetIPAddress();
+                string str = JsonConvert.SerializeObject(pjp.ExecutePJPPlan(objModel));
+                return str;
+            }
+            catch (Exception)
+            {
+                return "";
+            } 
         }
     }
 }

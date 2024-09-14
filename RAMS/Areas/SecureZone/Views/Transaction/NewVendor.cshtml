@@ -86,14 +86,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Serviceable States</label>
-                    <select class="form-control applyselect" id="ddlServiceableState" required>
-                        <option value="0">-- Select --</option>
-                        <option value="1">Delhi</option>
-                        <option value="2">Haryana</option>
-                        <option value="3">UP</option>
-                        <option value="4">JH</option>
-                        <option value="5">BR</option>
-                    </select>
+                    <select class="form-control applyselect" id="ddlServiceableState" required></select>
                 </div>
             </div>
             <div class="col-md-3">
@@ -132,6 +125,14 @@
                     <input type="text" class="form-control NumericOnly" id="txtPinCode" placeholder="Enter PIN Code" required autocomplete="off" />
                 </div>
             </div>
+            @*this page is for creating new vendors through portal
+                and all about approval
+            *@
+
+
+
+
+
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Latitude</label>
@@ -174,6 +175,22 @@
                     <input type="text" class="form-control" id="txtMSMENumber" placeholder="Enter MSME Number" required autocomplete="off" />
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Route Number</label>
+                    <input type="text" class="form-control" id="txtRouteNumber" placeholder="Enter Route Number" required autocomplete="off" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Route Type</label>
+                    <select class="form-control applyselect" id="ddlRouteType" required>
+                        <option value="0">-- Select --</option>
+                        <option value="UpCountry">UpCountry</option>
+                        <option value="Local">Local</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="row" id="tbl_VendorDoc"></div>
         <div class="row mt-4">
@@ -191,6 +208,6 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="~/assets/js/custom/dms.js"></script>
-<script src="~/js/tostvalidation.js"></script>
 <script src="~/assets/js/custom/addvendor.js"></script>

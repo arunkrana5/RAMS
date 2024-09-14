@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    loader_hide();
     GetVendorList();
 });
 function GetVendorList() {
@@ -10,14 +11,20 @@ function GetVendorList() {
         type: 'POST',
         dataType: 'JSON',
         data: { objModel: obj },
+        beforeSend: function () {
+            loader_show();
+        },
         success: function (res) {
+            loader_hide();
             console.log(res);
-            let data = res.Table;
-            let html = ``;
-            $.each(data, function (k, v) {
-                html += `
+            if (res != null) {
+                if (res.Table.length > 0) {
+                    let data = res.Table;
+                    let html = ``;
+                    $.each(data, function (k, v) {
+                        html += `
                             <tr>
-                                <td><a href="/SecureZone/Transaction/NewVendor?id=`+ v.ID + `"><i class="fa fa-edit"></i></a>&nbsp;<a onclick="DeleteVendor(` + v.ID + `)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a></td>
+                                <td><a href="/SecureZone/Transaction/NewVendor?id=`+ v.ID + `"><i class="fa fa-edit"></i></a>&nbsp;<a onclick="DeleteVendor(` + v.ID + `)" style="cursor:pointer;"><i class="fa fa-trash" style="color:red;"></i></a>&nbsp;<a href="javascript:void(0);" onclick="ShowVendorModal(` + v.ID + `)" title="Show Details"><i class="fa fa-eye"></i></a></td>
                                 <td>`+ v.FirmType + `</td>
                                 <td>`+ v.GSTNumber + `</td>
                                 <td>`+ v.GSTRegDate + `</td>
@@ -37,13 +44,22 @@ function GetVendorList() {
                                 <td>`+ v.IFSC + `</td>
                                 <td>`+ v.BankBranch + `</td>
                                 <td>`+ v.MSMENumber + `</td>
+                                <td>`+ v.RouteNumber + `</td>
+                                <td>`+ v.RouteType + `</td>
                                 <td>`+ v.CreatedBy + `</td>
                                 <td>`+ v.CreatedDate + `</td>
                             </tr>
                         `;
-            });
-            $('#tbody_Vendors').html(html);
-
+                    });
+                    $('#tbody_Vendors').html(html);
+                }
+                else {
+                    $('#tbody_Vendors').html(``);
+                }
+            }
+            else {
+                toastr.error("Something went wrong !");
+            }
             new DataTable('#tbl_Vendor');
         }
     })
@@ -52,10 +68,10 @@ function DeleteVendor(id) {
     console.log(id);
     let obj = {};
     obj.Mode = "DELETE_VENDOR";
-    obj.ID = id; 
+    obj.ID = id;
     $.confirm({
         title: 'Confirm!',
-        content: 'Are you sure! You want to Delete Document?',
+        content: 'Are you sure! You want to Delete Vendor?',
         buttons: {
             Yes: {
                 text: 'Yes',
@@ -67,21 +83,30 @@ function DeleteVendor(id) {
                         method: 'POST',
                         dataType: 'JSON',
                         data: { objModel: obj },
+                        beforeSend: function () {
+                            loader_show();
+                        },
                         success: function (res) {
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                // title: '',
-                                showConfirmButton: false,
-                                allowOutsideClick: false,
-                                html: ` 
+                            loader_hide();
+                            if (res != null) {
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    // title: '',
+                                    showConfirmButton: false,
+                                    allowOutsideClick: false,
+                                    html: ` 
                                     <div>
                                       <h2>`+ res.Table[0].msg + `</h2>
                                         <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
                                         <i class="fa fa-back"></i>Go To List</button>
                                     </div>
                                 `
-                            });
+                                });
+                            }
+                            else {
+                                toastr.error("Something went wrong !");
+                            }
                         }
                     });
 

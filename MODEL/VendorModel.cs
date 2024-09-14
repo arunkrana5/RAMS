@@ -30,5 +30,7 @@ namespace MODEL
         public string? MSMENumber { get; set; }
         public bool IsTermsConditionChecked { get; set; }
         public long[] VendorID { get; set; }
+        public string? RouteNumber { get; set; }
+        public string? RouteType { get; set; }
     }
 }

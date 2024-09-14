@@ -28,5 +28,8 @@
         public string? ConfigToken { get; set; }
         public string? Message { get; set; }
         public string? Mode { get; set; }
+        public string? Proc { get; set; }
+        public int CreatedBy { get; set; }
+        public string? IPAddress { get; set; }
     }
 }

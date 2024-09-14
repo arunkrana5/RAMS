@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using COMMON
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,26 +22,41 @@
             text-decoration: line-through;
         }
 
-        div.overlay {
+        div.loader {
             text-align: center !important;
             vertical-align: central !important;
+            display: table;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        [class*="loader"] {
+            position: relative;
+            z-index: 1;
+        }
+
+        table.dataTable tbody tr:hover {
+            background-color: #71d1eb !important;
         }
     </style>
 </head>
 <body>
     <div class="page-wrapper default-version">
         <div class="sidebar bg--dark">
-            <button class="res-sidebar-close-btn"><i class="las la-times"></i></button>
+            <button class="res-sidebar-close-btn" style="display:block !important;"><i class="las la-times"></i></button>
             <div class="sidebar__inner">
-                <div class="sidebar__logo" style="background-color:#f3f3f9;height: 66px; margin: 0px;padding: 0px;">
-                    <a href="/admin/dashboard/index" class="sidebar__main-logo">
-                        <img src="~/assets/thrivera.jpeg" style="height: 66px;" />
+                <div class="sidebar__logo" style="background-color:#f3f3f9;height: 63px; margin: 0px;padding: 0px;">
+                    <a href="@Url.Action("Index","Dashboard",new {area="SecureZone"})" class="sidebar__main-logo">
+                        <img src="~/assets/thrivera.jpeg" style="height: 63px;" />
                     </a>
                 </div>
 
                 <div class="sidebar__menu-wrapper" id="sidebar__menuWrapper">
                     <ul class="sidebar__menu">
-                        <li class="sidebar-menu-item active">
+                        <li class="sidebar-menu-item">
                             <a href="@Url.Action("Index","Dashboard",new {area="SecureZone"})" class="nav-link ">
                                 <i class="menu-icon las la-home"></i>
                                 <span class="menu-title">Dashboard</span>
@@ -57,7 +73,13 @@
                                     <li class="sidebar-menu-item">
                                         <a href="@Url.Action("Users","Master",new {area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
-                                            <span class="menu-title">Users</span>
+                                            <span class="menu-title">Employee</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Dealers","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Dealers</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
@@ -106,6 +128,30 @@
                                         <a href="@Url.Action("DocumentType","Master",new {area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Document Type</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("BrandingType","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Branding Type</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("Role","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Role</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("DealerType","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Dealer Type</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a href="@Url.Action("DealerCategory","Master",new {area="SecureZone"})" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Dealer Category</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -158,7 +204,7 @@
                                     </li>
 
                                     <li class="sidebar-menu-item">
-                                        <a href="@Url.Action("PJP", "Transaction",new {Area="SecureZone"})" class="nav-link">
+                                        <a href="@Url.Action("PJPPlanList", "Transaction",new {Area="SecureZone"})" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">PJP</span>
                                         </a>
@@ -175,7 +221,7 @@
         <!-- navbar-wrapper start -->
         <nav class="navbar-wrapper bg--dark">
             <div class="navbar__left">
-                <button type="button" class="res-sidebar-open-btn me-3"><i class="las la-bars"></i></button>
+                <button type="button" class="res-sidebar-open-btn me-3" style="display:block !important;"><i class="las la-bars"></i></button>
                 <form class="navbar-search">
                     <input type="search" name="#0" class="navbar-search-field" id="searchInput" autocomplete="off"
                            placeholder="Search here...">
@@ -196,26 +242,26 @@
                             <span class="navbar-user">
                                 <span class="navbar-user__thumb">
                                     @*<img src="~/assets/media/avatars/300-10.jpg" />*@
-                                    <i class="fa fa-user"></i>
+                                    <i class="lar la-user-circle"></i>
                                 </span>
                                 <span class="navbar-user__info">
-                                    <span class="navbar-user__name">Arun</span>
+                                    <span class="navbar-user__name">@ClsApplicationSetting.GetSessionValue("EMPName")</span>
                                 </span>
                                 <span class="icon"><i class="las la-chevron-circle-down"></i></span>
                             </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right">
-                            <a href="@Url.Action("MyProfile","Account",new{area="SecureZone"})"
+                            <a href="@Url.Action("MyProfile","Account",new{area="Authentication"})"
                                class="dropdown-menu__item d-flex align-items-center px-3 py-2">
                                 <i class="dropdown-menu__icon las la-user-circle"></i>
                                 <span class="dropdown-menu__caption">Profile</span>
                             </a>
                             <a href="#"
                                class="dropdown-menu__item d-flex align-items-center px-3 py-2">
-                                <i class="dropdown-menu__icon las la-user-circle"></i>
-                                <span class="dropdown-menu__caption">Last login: @DateTime.Now</span>
+                                <i class="dropdown-menu__icon lar la-calendar-alt"></i>
+                                <span class="dropdown-menu__caption">Last login: @DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</span>
                             </a>
-                            <a href="@Url.Action("Logout","Account",new {area="SecureZone"})"
+                            <a href="@Url.Action("Logout","Account",new { area="Authentication" })"
                                class="dropdown-menu__item d-flex align-items-center px-3 py-2">
                                 <i class="dropdown-menu__icon las la-sign-out-alt"></i>
                                 <span class="dropdown-menu__caption">Logout</span>
@@ -224,7 +270,13 @@
                     </li>
                 </ul>
             </div>
-        </nav> 
+        </nav>
+        <div class="modal" id="MarkAttendenceModal" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog " role="document">
+                <div id="MTargetDiv"></div>
+            </div>
+
+        </div>
         <div class="body-wrapper">
             <div class="bodywrapper__inner">
 
@@ -234,6 +286,9 @@
             </div>
         </div>
     </div>
+    <div class="loader">
+        <img src="~/assets/media/spinner-5.gif" style="position: relative;max-width: 100%;height: auto;width: 4%;top: 50%;" />
+    </div>
     <script src="~/layout/bootstrap.bundle.min.js"></script>
     <script src="~/layout/bootstrap-toggle.min.js"></script>
     <script src="~/layout/jquery.slimscroll.min.js"></script>
@@ -242,6 +297,8 @@
     <script src="~/layout/jquery-confirm.js"></script>
     <script src="~/layout/toastr.min.js"></script>
     <script src="~/layout/sweetalert2.min.js"></script>
+    <script src="~/assets/js/custom/common.js"></script>
+    <script src="~/js/tostvalidation.js"></script>
     <script>
         "use strict";
         function notify(status, message) {
@@ -250,10 +307,10 @@
                 position: "topRight"
             });
         }
-    </script> 
+    </script>
     <script src="~/layout/nicedit.js"></script>
     <script src="~/layout/select2.min.js"></script>
-    <script src="~/layout/app.js"></script> 
+    <script src="~/layout/app.js"></script>
     <script>
         "use strict";
         bkLib.onDomLoaded(function () {
@@ -267,7 +324,7 @@
                 $('.nicEdit-main').focus();
             });
         })(jQuery);
-    </script> 
+    </script>
     <script>
         if ($('li').hasClass('active')) {
             $('#sidebar__menuWrapper').animate({

@@ -51,7 +51,7 @@ namespace DAL
                 {
                     int commandTimeout = 0;
                     var param = new DynamicParameters();
-                    param.Add("@UserID", dbType: DbType.String, value: ClsCommon.EnsureString(UserName), direction: ParameterDirection.Input);
+                    param.Add("@UserName", dbType: DbType.String, value: ClsCommon.EnsureString(UserName), direction: ParameterDirection.Input);
                     param.Add("@Password", dbType: DbType.String, value: ClsCommon.EnsureString(ClsCommon.Encrypt(Password)), direction: ParameterDirection.Input);
                     param.Add("@SessionID", dbType: DbType.String, value: ClsCommon.EnsureString(SessionID), direction: ParameterDirection.Input);
                     param.Add("@IPAddress", dbType: DbType.String, value: ClsCommon.EnsureString(IPAddress), direction: ParameterDirection.Input);

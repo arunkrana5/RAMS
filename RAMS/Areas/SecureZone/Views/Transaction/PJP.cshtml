@@ -1,10 +1,33 @@
 ﻿@{
     Layout = "_Layout";
 }
+<style>
+    .select2-container .select2-selection--multiple {
+        min-height: 0px;
+        padding-top: 0px;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: deepskyblue;
+        border-color: black;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+        background-color: fuchsia;
+    }
+
+    .select2-container {
+        width: 100% !important;
+    }
+
+    .border-color-red {
+        border-color: red;
+    }
+</style>
 <div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
     <h6 class="page-title" id="headerTitle">Add PJP</h6>
     <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
-        <a href="@Url.Action("PJPList","Transaction",new {Area="SecureZone"})" class="btn btn-sm btn-outline--primary">
+        <a href="@Url.Action("PJPPlanList","Transaction",new {Area="SecureZone"})" class="btn btn-sm btn-outline--primary">
             <i class="las la-list"></i>List
         </a>
         <a onclick="history.back()" class="btn btn-sm btn-outline--primary">
@@ -18,29 +41,21 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Employee</label>
-                    <select class="form-control select2" id="ddlUserID">
+                    <select class="form-control select2" id="ddlUserID"></select>
+                </div>
+            </div>
+            @* <div class="col-md-3">
+                <div class="form-group">
+                    <label>Vendor Type</label>
+                    <select class="form-control select2" id="ddlVendorTypeID">
                         <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label>Dealer Category</label>
-                    <select class="form-control select2" id="ddlDealerCategoryID">
-                        <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label>Dealer Type</label>
-                    <select class="form-control select2" id="ddlDealerTypeID">
+                    <label>Vendor Category</label>
+                    <select class="form-control select2" id="ddlVendorCategoryID">
                         <option>-- Select --</option>
                         <option value="1">Arun</option>
                         <option value="2">Kumar</option>
@@ -51,91 +66,59 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Region</label>
-                    <select class="form-control select2" id="ddlRegionID">
-                        <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
-                    </select>
+                    <select class="form-control select2" id="ddlRegionID"><option>-- Select --</option></select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>State</label>
-                    <select class="form-control select2" id="ddlStateID">
-                        <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
-                    </select>
+                    <select class="form-control select2" id="ddlStateID"><option>-- Select --</option></select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>City</label>
-                    <select class="form-control select2" id="ddlCityID">
-                        <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
-                    </select>
+                    <select class="form-control select2" id="ddlCityID"><option>-- Select --</option></select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Area</label>
-                    <select class="form-control select2" id="ddlAreaID">
+                    <select class="form-control select2" id="ddlAreaID"><option>-- Select --</option></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <a class="btn btn--success" style="text-align: center; margin-top: 25px;">Search Dealer</a>
+                </div>
+            </div> *@
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Route Number</label>
+                    <select class="form-control select2" id="ddlRouteNumber">
                         <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                <label> &nbsp;    </label>
-                    <a class="btn btn-success" style="text-align: center; margin-top: 20px;">Search Dealer</a>
-            </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
                     <label>Vendor</label>
-                    <select class="form-control select2" id="ddlVendorID">
-                        <option>-- Select --</option>
-                        <option value="1">Arun</option>
-                        <option value="2">Kumar</option>
-                        <option value="3">Rana</option>
+                    <select class="form-control select2" id="ddlVendorID" multiple="multiple">
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Visit Date</label>
-                    <input type="date" class="form-control" placeholder="Enter Visit Date" id="txtDate"/>
+                    <input type="date" class="form-control" placeholder="Enter Visit Date" id="txtDate" />
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="card-footer">
-        <button class="btn btn-success" id="btn_Submit">Submit</button>
-        <a href="/Dashboard/Requisition" class="btn btn-danger">Cancel</a>
+        <button class="btn btn--success" id="btn_Submit">Submit</button>
+        <a href="@Url.Action("Index","Dashboard",new { Area="SecureZone"})" class="btn btn--danger">Cancel</a>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('.select2').select2();
-        $('#btn_Submit').on('click', function () { 
-            ExecutePJP();
-        });
-    });
-    function ExecutePJP() {
-        let obj = {};
-        obj.ID = $('#hd_PJPID').val();
-        obj.UserID = $('#ddlUserID').val();
-        obj.DealerID = $('#ddlDealerID').val();
-        obj.Date = $('#txtDate').val();
-        console.log(obj);
-    }
-</script>
+<script src="~/assets/js/custom/addpjp.js"></script>

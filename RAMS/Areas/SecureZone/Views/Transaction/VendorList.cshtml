@@ -3,17 +3,30 @@
 }
 <link href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" rel="stylesheet" />
 <style>
-    .table > thead {
-        vertical-align: middle;
+
+    .border-color-red {
+        border-color: red;
+    }
+
+    .table td {
+        text-align: start;
+    }
+
+    table th:last-child {
+        text-align: start;
+    }
+
+    table td:last-child {
+        text-align: start;
     }
 </style>
 <div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
     <h6 class="page-title" id="headerTitle">Existing Vendor List</h6>
     <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
-        <a href="@Url.Action("NewVendor","Transaction",new {Area="SecureZone"})" class="btn btn-sm btn-outline--primary">
-            <i class="las la-plus"></i>Add Vendor
+        <a href="@Url.Action("NewVendor","Transaction",new {Area="SecureZone"})" class="btn btn-sm btn--primary">
+            <i class="las la-plus"></i>Add
         </a>
-        <a onclick="history.back()" class="btn btn-sm btn-outline--primary">
+        <a onclick="history.back()" class="btn btn-sm btn--primary">
             <i class="la la-undo"></i> Back
         </a>
     </div>
@@ -45,6 +58,8 @@
                             <th>IFSC</th>
                             <th>Bank Branch</th>
                             <th>MSME Number</th>
+                            <th>Route Number</th>
+                            <th>Route Type</th>
                             <th>Created By</th>
                             <th>Created Date</th>
                         </tr>
@@ -57,4 +72,5 @@
     </div>
 </div> 
 <script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+<script src="~/assets/js/custom/dms.js"></script>
 <script src="~/assets/js/custom/vendorlist.js"></script>

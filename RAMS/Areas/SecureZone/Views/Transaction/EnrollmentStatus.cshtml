@@ -4,15 +4,32 @@
 <link href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" rel="stylesheet" />
 <link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
 <link href="~/layout/sweetalert2.min.css" rel="stylesheet" />
+<style>
+    .border-color-red {
+        border-color: red;
+    }
+
+    .table td {
+        text-align: start;
+    }
+
+    table th:last-child {
+        text-align: start;
+    }
+
+    table td:last-child {
+        text-align: start;
+    }
+</style>
 <div class="card">
     <div class="card-body">
         <nav>
             <div class="nav nav-tabs d-flex" id="nav-tab" role="tablist">
                 <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Pending</button>
                 <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Approved</button>
-                <button class="nav-link" id="nav-reject-tab" data-bs-toggle="tab" data-bs-target="#nav-reject" type="button" role="tab" aria-controls="nav-reject" aria-selected="false">Rejected</button>
-                <button id="btn_Approve" class="btn btn-success">Approve</button>
-                <button id="btn_Reject" style="margin-left:10px;" class="btn btn-danger">Reject</button>
+                <button class="nav-link" id="nav-reject-tab" data-bs-toggle="tab" data-bs-target="#nav-reject" type="button" role="tab" aria-controls="nav-reject" aria-selected="false" style="margin-right: auto;">Rejected</button>
+                <button id="btn_Approve" class="btn btn-success mb-1">Approve</button>
+                <button id="btn_Reject" style="margin-left:10px;" class="btn btn-danger mb-1">Reject</button>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -43,6 +60,8 @@
                                     <th>IFSC</th>
                                     <th>Bank Branch</th>
                                     <th>MSME Number</th>
+                                    <th>RouteNumber</th>
+                                    <th>RouteType</th>
                                     <th>Created By</th>
                                     <th>Created Date</th>
                                 </tr>
@@ -59,6 +78,7 @@
                         <table class="table align-items-center mb-0" id="tbl_approved">
                             <thead class="thead-light">
                                 <tr>
+                                    <th>#</th>
                                     <th>Firm Type</th>
                                     <th>GST Number</th>
                                     <th>GST Reg Date</th>
@@ -78,6 +98,8 @@
                                     <th>IFSC</th>
                                     <th>Bank Branch</th>
                                     <th>MSME Number</th>
+                                    <th>RouteNumber</th>
+                                    <th>RouteType</th>
                                     <th>Created By</th>
                                     <th>Created Date</th>
                                 </tr>
@@ -94,6 +116,7 @@
                         <table class="table align-items-center mb-0" id="tbl_rejected">
                             <thead class="thead-light">
                                 <tr>
+                                    <th>#</th>
                                     <th>Firm Type</th>
                                     <th>GST Number</th>
                                     <th>GST Reg Date</th>
@@ -113,6 +136,8 @@
                                     <th>IFSC</th>
                                     <th>Bank Branch</th>
                                     <th>MSME Number</th>
+                                    <th>RouteNumber</th>
+                                    <th>RouteType</th>
                                     <th>Created By</th>
                                     <th>Created Date</th>
                                 </tr>
@@ -125,5 +150,6 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script><script src="~/layout/sweetalert2.min.js"></script>
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+<script src="~/assets/js/custom/dms.js"></script>
 <script src="~/assets/js/custom/enrollmentstatus.js"></script>

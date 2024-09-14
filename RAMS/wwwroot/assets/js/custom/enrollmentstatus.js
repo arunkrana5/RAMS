@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    loader_hide();
     GetVendorList();
 });
 function GetVendorList() {
@@ -10,129 +11,145 @@ function GetVendorList() {
         type: 'POST',
         dataType: 'JSON',
         data: { objModel: obj },
+        beforeSend: function () {
+            loader_show();
+        },
         success: function (res) {
+            loader_hide();
             console.log(res);
-            let pending = res.Table;
-            let approved = res.Table1;
-            let rejected = res.Table2;
-            let html = ``;
-            let approvedhtml = ``;
-            let rejectedhtml = ``;
-            $.each(pending, function (k, v) {
-                html += `
-                   <tr>
-                       <td><input class="form-check-input checkboxes" type="checkbox" name="chk" value="`+ v.ID + `"></td>
-                       <td>`+ v.FirmType + `</td>
-                       <td>`+ v.GSTNumber + `</td>
-                       <td>`+ v.GSTRegDate + `</td>
-                       <td>`+ v.OwnerName + `</td>
-                       <td>`+ v.Address + `</td>
-                       <td>`+ v.FactoryAddress + `</td>
-                       <td>`+ v.ServiceableState + `</td>
-                       <td>`+ v.BrandingType + `</td>
-                       <td>`+ v.ManagerDetails + `</td>
-                       <td>`+ v.ContactNumber + `</td>
-                       <td>`+ v.City + `</td>
-                       <td>`+ v.PinCode + `</td>
-                       <td>`+ v.Latitude + `</td>
-                       <td>`+ v.Longitude + `</td>
-                       <td>`+ v.NameAsPerBank + `</td>
-                       <td>`+ v.AccountNumber + `</td>
-                       <td>`+ v.IFSC + `</td>
-                       <td>`+ v.BankBranch + `</td>
-                       <td>`+ v.MSMENumber + `</td>
-                       <td>`+ v.CreatedBy + `</td>
-                       <td>`+ v.CreatedDate + `</td>
-                   </tr>
-                `;
-            });
-            $('#tbody_pending').html(html);
+            if (res != null) {
+                if (res.Table.length > 0) {
+                    let pending = res.Table;
+                    let html = ``;
+                    $.each(pending, function (k, v) {
+                        html += `
+                           <tr>
+                               <td><input class="form-check-input checkboxes" type="checkbox" name="chk" value="`+ v.ID + `">&nbsp;&nbsp;<a href="/SecureZone/Transaction/NewVendor?id=` + v.ID + `"><i class="fa fa-edit"></i></a>&nbsp;<a href="javascript:void(0);" onclick="ShowVendorModal(` + v.ID + `)" title="Show Details"><i class="fa fa-eye"></i></a></td>
+                               <td>`+ v.FirmType + `</td>
+                               <td>`+ v.GSTNumber + `</td>
+                               <td>`+ v.GSTRegDate + `</td>
+                               <td>`+ v.OwnerName + `</td>
+                               <td>`+ v.Address + `</td>
+                               <td>`+ v.FactoryAddress + `</td>
+                               <td>`+ v.ServiceableState + `</td>
+                               <td>`+ v.BrandingType + `</td>
+                               <td>`+ v.ManagerDetails + `</td>
+                               <td>`+ v.ContactNumber + `</td>
+                               <td>`+ v.City + `</td>
+                               <td>`+ v.PinCode + `</td>
+                               <td>`+ v.Latitude + `</td>
+                               <td>`+ v.Longitude + `</td>
+                               <td>`+ v.NameAsPerBank + `</td>
+                               <td>`+ v.AccountNumber + `</td>
+                               <td>`+ v.IFSC + `</td>
+                               <td>`+ v.BankBranch + `</td>
+                               <td>`+ v.MSMENumber + `</td>
+                               <td>`+ v.RouteNumber + `</td>
+                               <td>`+ v.RouteType + `</td>
+                               <td>`+ v.CreatedBy + `</td>
+                               <td>`+ v.CreatedDate + `</td>
+                           </tr>
+                        `;
+                    });
+                    $('#tbody_pending').html(html);
 
-            new DataTable('#tbl_pending');
-            $('.checkAll').on('click', function () {
-                if (this.checked) {
-                    $(".checkboxes").prop("checked", true);
-                } else {
-                    $(".checkboxes").prop("checked", false);
+                    new DataTable('#tbl_pending');
+                    $('.checkAll').on('click', function () {
+                        if (this.checked) {
+                            $(".checkboxes").prop("checked", true);
+                        } else {
+                            $(".checkboxes").prop("checked", false);
+                        }
+                    });
+
+                    $(".checkboxes").on('click', function () {
+                        var numberOfCheckboxes = $(".checkboxes").length;
+                        var numberOfCheckboxesChecked = $('.checkboxes:checked').length;
+                        if (numberOfCheckboxes == numberOfCheckboxesChecked) {
+                            $(".checkAll").prop("checked", true);
+                        } else {
+                            $(".checkAll").prop("checked", false);
+                        }
+                    });
+                    $('#btn_Approve').on('click', function () {
+                        ApproveReject('APPROVE');
+                    });
+                    $('#btn_Reject').on('click', function () {
+                        ApproveReject('REJECT');
+                    });
                 }
-            });
-
-            $(".checkboxes").on('click', function () {
-                var numberOfCheckboxes = $(".checkboxes").length;
-                var numberOfCheckboxesChecked = $('.checkboxes:checked').length;
-                if (numberOfCheckboxes == numberOfCheckboxesChecked) {
-                    $(".checkAll").prop("checked", true);
-                } else {
-                    $(".checkAll").prop("checked", false);
+                if (res.Table1.length > 0) {
+                    let approved = res.Table1;
+                    let approvedhtml = ``;
+                    $.each(approved, function (k, v) {
+                        approvedhtml += `
+                          <tr>
+                              <td><a href="javascript:void(0);" onclick="ShowVendorModal(` + v.ID + `)" title="Show Details"><i class="fa fa-eye"></i></a></td>
+                              <td>`+ v.FirmType + `</td>
+                              <td>`+ v.GSTNumber + `</td>
+                              <td>`+ v.GSTRegDate + `</td>
+                              <td>`+ v.OwnerName + `</td>
+                              <td>`+ v.Address + `</td>
+                              <td>`+ v.FactoryAddress + `</td>
+                              <td>`+ v.ServiceableState + `</td>
+                              <td>`+ v.BrandingType + `</td>
+                              <td>`+ v.ManagerDetails + `</td>
+                              <td>`+ v.ContactNumber + `</td>
+                              <td>`+ v.City + `</td>
+                              <td>`+ v.PinCode + `</td>
+                              <td>`+ v.Latitude + `</td>
+                              <td>`+ v.Longitude + `</td>
+                              <td>`+ v.NameAsPerBank + `</td>
+                              <td>`+ v.AccountNumber + `</td>
+                              <td>`+ v.IFSC + `</td>
+                              <td>`+ v.BankBranch + `</td>
+                              <td>`+ v.MSMENumber + `</td>
+                              <td>`+ v.RouteNumber + `</td>
+                              <td>`+ v.RouteType + `</td>
+                              <td>`+ v.CreatedBy + `</td>
+                              <td>`+ v.CreatedDate + `</td>
+                          </tr>
+                        `;
+                    });
+                    $('#tbody_approved').html(approvedhtml);
                 }
-            });
-            $('#btn_Approve').on('click', function () {
-                ApproveReject('APPROVE');
-            });
-            $('#btn_Reject').on('click', function () {
-                ApproveReject('REJECT');
-            });
-
-            $.each(approved, function (k, v) {
-                approvedhtml += `
-                   <tr>
-                       <td>`+ v.FirmType + `</td>
-                       <td>`+ v.GSTNumber + `</td>
-                       <td>`+ v.GSTRegDate + `</td>
-                       <td>`+ v.OwnerName + `</td>
-                       <td>`+ v.Address + `</td>
-                       <td>`+ v.FactoryAddress + `</td>
-                       <td>`+ v.ServiceableState + `</td>
-                       <td>`+ v.BrandingType + `</td>
-                       <td>`+ v.ManagerDetails + `</td>
-                       <td>`+ v.ContactNumber + `</td>
-                       <td>`+ v.City + `</td>
-                       <td>`+ v.PinCode + `</td>
-                       <td>`+ v.Latitude + `</td>
-                       <td>`+ v.Longitude + `</td>
-                       <td>`+ v.NameAsPerBank + `</td>
-                       <td>`+ v.AccountNumber + `</td>
-                       <td>`+ v.IFSC + `</td>
-                       <td>`+ v.BankBranch + `</td>
-                       <td>`+ v.MSMENumber + `</td>
-                       <td>`+ v.CreatedBy + `</td>
-                       <td>`+ v.CreatedDate + `</td>
-                   </tr>
-                 `;
-            });
-            $('#tbody_approved').html(approvedhtml);
-
-            new DataTable('#tbl_approved');
-
-            $.each(rejected, function (k, v) {
-                rejectedhtml += `
-                    <tr>
-                        <td>`+ v.FirmType + `</td>
-                        <td>`+ v.GSTNumber + `</td>
-                        <td>`+ v.GSTRegDate + `</td>
-                        <td>`+ v.OwnerName + `</td>
-                        <td>`+ v.Address + `</td>
-                        <td>`+ v.FactoryAddress + `</td>
-                        <td>`+ v.ServiceableState + `</td>
-                        <td>`+ v.BrandingType + `</td>
-                        <td>`+ v.ManagerDetails + `</td>
-                        <td>`+ v.ContactNumber + `</td>
-                        <td>`+ v.City + `</td>
-                        <td>`+ v.PinCode + `</td>
-                        <td>`+ v.Latitude + `</td>
-                        <td>`+ v.Longitude + `</td>
-                        <td>`+ v.NameAsPerBank + `</td>
-                        <td>`+ v.AccountNumber + `</td>
-                        <td>`+ v.IFSC + `</td>
-                        <td>`+ v.BankBranch + `</td>
-                        <td>`+ v.MSMENumber + `</td>
-                        <td>`+ v.CreatedBy + `</td>
-                        <td>`+ v.CreatedDate + `</td>
-                    </tr>
-                `;
-            });
-            $('#tbody_rejected').html(rejectedhtml);
-
+                new DataTable('#tbl_approved');
+                if (res.Table2.length > 0) {
+                    let rejected = res.Table2;
+                    let rejectedhtml = ``;
+                    $.each(rejected, function (k, v) {
+                        rejectedhtml += `
+                            <tr>
+                                <td><a href="javascript:void(0);" onclick="ShowVendorModal(` + v.ID + `)" title="Show Details"><i class="fa fa-eye"></i></a></td>
+                                <td>`+ v.FirmType + `</td>
+                                <td>`+ v.GSTNumber + `</td>
+                                <td>`+ v.GSTRegDate + `</td>
+                                <td>`+ v.OwnerName + `</td>
+                                <td>`+ v.Address + `</td>
+                                <td>`+ v.FactoryAddress + `</td>
+                                <td>`+ v.ServiceableState + `</td>
+                                <td>`+ v.BrandingType + `</td>
+                                <td>`+ v.ManagerDetails + `</td>
+                                <td>`+ v.ContactNumber + `</td>
+                                <td>`+ v.City + `</td>
+                                <td>`+ v.PinCode + `</td>
+                                <td>`+ v.Latitude + `</td>
+                                <td>`+ v.Longitude + `</td>
+                                <td>`+ v.NameAsPerBank + `</td>
+                                <td>`+ v.AccountNumber + `</td>
+                                <td>`+ v.IFSC + `</td>
+                                <td>`+ v.BankBranch + `</td>
+                                <td>`+ v.MSMENumber + `</td>
+                                <td>`+ v.RouteNumber + `</td>
+                                <td>`+ v.RouteType + `</td>
+                                <td>`+ v.CreatedBy + `</td>
+                                <td>`+ v.CreatedDate + `</td>
+                            </tr>
+                        `;
+                    });
+                    $('#tbody_rejected').html(rejectedhtml);
+                }
+            }
             new DataTable('#tbl_rejected');
         }
     })
@@ -155,22 +172,31 @@ function ApproveReject(Action) {
             type: 'POST',
             dataType: 'JSON',
             data: { objModel: obj },
+            beforeSend: function () {
+                loader_show();
+            },
             success: function (res) {
+                loader_hide();
                 console.log(res);
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    // title: '',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    html: ` 
-                <div>
-                  <h2>`+ res.Table[0].msg+`</h2>
-                    <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
-                    <i class="fa fa-back"></i>Go To List</button>
-                </div>
-            `
-                });
+                if (res != null) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        // title: '',
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        html: ` 
+                            <div>
+                              <h2>`+ res.Table[0].msg + `</h2>
+                                <button class="btn btn-primary" onclick="onSwalBtnClicked('list')">
+                                <i class="fa fa-back"></i>Go To List</button>
+                            </div>
+                        `
+                    });
+                }
+                else {
+                    toastr.error("Something went wrong !");
+                }
             }
         });
     }
@@ -198,7 +224,7 @@ function onSwalBtnClicked(btnId) {
             window.location.reload();
             break;
         case 'list':
-            window.location.href="/SecureZone/Transaction/EnrollmentStatus";
+            window.location.href = "/SecureZone/Transaction/EnrollmentStatus";
             break;
         default:
     }

@@ -1,0 +1,50 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VConnect - Forgot Password</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/layout/bootstrap.min.css">
+    <link rel="stylesheet" href="/layout/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="/layout/all.min.css">
+    <link rel="stylesheet" href="/layout/line-awesome.min.css">
+    <link rel="stylesheet" href="/layout/app.css">
+</head>
+<body>
+    <div class="login-main" style="background-image: url('/assets/media/bg4.jpg');">
+
+        <div style="border: solid 1px #cac2c2;border-radius: 10px;position: absolute;top:10%;min-width:275px;background-color: darkkhaki;padding:2%;">
+            <h3 style="color:#ffffff;text-align:center">Forgot Password</h3>
+            <form class="login-wrapper__body mt-0" style="padding: 10px 7px 23px 9px;" method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="ForgotPwd">
+                <input name="RequestToken" type="hidden" value="CfDJ8Pv4ClZWAMVBpt0ANLtk3C-MBroSOEFvsi-68Z_tgMykPrEVuS9u1-X3xdseu9M2_I7uMOf3Brf4HVBxr3Wwi1vBije5oz7rUM2YN-ZVbH5TXM_8xGGiKvjLfeNqktX3UH2uSLRELj37PLhoTNz1jq0">
+                <div class="cmn-form mt-0 login-form">
+                    
+                    <div class="form-group" style="margin-bottom:0px">
+                        <label for="pwd" style="color:#ffffff;font-size:11px">Old Passsword</label>
+
+                        <input type="password" style="height: 40px;background-color:#eae9e9" autocomplete="off" name="Pwd" placeholder="********" class="form-control">
+                    </div>
+                    <div class="form-group" style="margin-bottom:0px">
+                        <label for="pwd" style="color:#ffffff;font-size:11px">New Passsword</label>
+
+                        <input type="password" style="height: 40px;background-color:#eae9e9" autocomplete="off" name="Pwd" placeholder="********" class="form-control">
+                    </div>
+                    <div class="form-group" style="margin-bottom:0px">
+                        <label for="confirmpwd" style="color:#ffffff;font-size:11px">Confirm Passsword</label>
+                        <input type="password" style="height: 40px;background-color:#eae9e9" autocomplete="off" name="ConfirmPwd" placeholder="********" class="form-control">
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <div class="form-check me-3">
+                        </div>
+                        <a href="/Authentication/Account/Login" class="forget-text" style="color:#ffffff;margin-top: 5px;">Login</a>
+                    </div>
+                    <button type="submit" class="btn cmn-btn w-100" style="margin-top:5px;height:35px">Submit</button>
+                    <a href="/Authentication/Account/Login" class="btn cmn-btn w-100" style="background:#fbc64d;display: block;margin-top: 5px;height: 36px;" name="back" value="back">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

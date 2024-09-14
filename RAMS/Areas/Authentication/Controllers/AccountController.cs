@@ -26,9 +26,9 @@ namespace RAMS.Areas.Authentication.Controllers
         {
             ClsApplicationSetting.ClearSessionValues();
             ViewBag.ReturnURL = ReturnURL;
-			BaseModel Modal = new BaseModel();
-			return View(Modal);
-		}
+            BaseModel Modal = new BaseModel();
+            return View(Modal);
+        }
 
         [HttpPost]
         public JsonResult Login(LoginModel Modal, string Command)
@@ -44,7 +44,7 @@ namespace RAMS.Areas.Authentication.Controllers
                     BaseModel result = Account.GetLogin(Modal);
                     if (result.status)
                     {
-						ClsApplicationSetting.SetSessionValue("LoginID", result.LoginID.ToString());
+                        ClsApplicationSetting.SetSessionValue("LoginID", result.LoginID.ToString());
                         ClsApplicationSetting.SetSessionValue("UserID", result.UserID.ToString());
                         ClsApplicationSetting.SetSessionValue("RoleID", result.RoleID.ToString());
                         ClsApplicationSetting.SetSessionValue("RoleName", result.RoleName.ToString());
@@ -53,11 +53,11 @@ namespace RAMS.Areas.Authentication.Controllers
                         ClsApplicationSetting.SetSessionValue("EMPCode", result.EMPCode.ToString());
                         ClsApplicationSetting.SetSessionValue("Phone", result.Phone.ToString());
                         ClsApplicationSetting.SetSessionValue("Email", result.Email.ToString());
-						ClsApplicationSetting.SetSessionValue("Gender", result.Gender.ToString());
+                        ClsApplicationSetting.SetSessionValue("Gender", result.Gender.ToString());
                         jsonData = new JsonData() { status = true, message = "", Data = result };
                     }
                     else
-                    { 
+                    {
                         jsonData = new JsonData() { status = false, message = result.Message, Data = result };
                     }
 
@@ -65,6 +65,26 @@ namespace RAMS.Areas.Authentication.Controllers
             }
             return Json(jsonData);
 
+        }
+
+        public ActionResult Logout()
+        {
+            ClsApplicationSetting.ClearSessionValues();
+            return RedirectToAction("Login", "Account", new { Area = "Authentication" });
+        }
+
+        public ActionResult PageNotFound()
+        {
+            return View();
+        }
+
+        public ActionResult MyProfile()
+        {
+            return View();
+        }
+        public ActionResult ForgotPwd()
+        {
+            return View();
         }
     }
 }

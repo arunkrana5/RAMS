@@ -28,7 +28,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\ArunSpace\\RAMS\\MODEL\\MODEL.csproj": {
+                "projectPath": "D:\\ArunSpace\\RAMS\\MODEL\\MODEL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -46,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"

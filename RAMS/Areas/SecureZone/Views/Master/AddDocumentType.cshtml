@@ -20,7 +20,7 @@
 </style>
 <input type="hidden" id="hd_DocumentTypeID" value="@ViewBag.ID" />
 <div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
-    <h6 class="page-title" id="headerTitle">Add DocumentType</h6>
+    <h6 class="page-title" id="headerTitle">Add Document Type</h6>
     <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
         <a href="@Url.Action("DocumentType","Master",new {Area="SecureZone"})" class="btn btn-sm btn--primary">
             <i class="las la-list"></i>List
@@ -35,14 +35,14 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
-                    <label>DocumentType Code</label>
-                    <input type="text" class="form-control" id="txtCode" placeholder="Enter DocumentType Code" required autocomplete="off" />
+                    <label>Document Code</label>
+                    <input type="text" class="form-control" id="txtCode" placeholder="Enter Document Code" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label>DocumentType Name</label>
-                    <input type="text" class="form-control" id="txtName" placeholder="Enter DocumentType Name" required autocomplete="off" />
+                    <label>Document Name</label>
+                    <input type="text" class="form-control" id="txtName" placeholder="Enter Document Name" required autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-3">
@@ -58,4 +58,4 @@
         <a class="btn btn--danger" href="/SecureZone/Dashboard/Index">Cancel</a>
     </div>
 </div>
-<script src="~/js/tostvalidation.js"></script>
+<script src="~/assets/js/custom/adddocumenttype.js"></script>

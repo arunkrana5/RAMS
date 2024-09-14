@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/views/shared/_Layout.cshtml";
+}
+<div class="app-main flex-column flex-row-fluid mt-8" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <div id="kt_app_content_container" class="app-container container-xxl" style="max-width: 1800px;">
+                <div class="row g-7">
+                    <div class="col-lg-3">
+                        <a href="@Url.Action("VendorList","Transaction", new {Area="SecureZone"})">
+                            <div data-bs-toggle="modal" data-bs-target="#kt_preview" data-kt-category="abstract" class="cursor-pointer bg-body d-flex align-items-center rounded-3 shadow-sm px-6 py-5">
+                                <div class="d-flex flex-center rounded bg-light-primary h-50px w-50px me-5">
+                                    <i class="fab fa-modx text-warning" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fs-4 fw-bold text-gray-900">
+                                        Vendors
+                                    </div>
+                                    <div class="fs-7 fw-semibold text-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="@Url.Action("VendorList","Transaction", new {Area="SecureZone"})">
+                            <div data-bs-toggle="modal" data-bs-target="#kt_preview" data-kt-category="abstract" class="cursor-pointer bg-body d-flex align-items-center rounded-3 shadow-sm px-6 py-5">
+                                <div class="d-flex flex-center rounded bg-light-primary h-50px w-50px me-5">
+                                    <i class="fab fa-buffer text-info" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fs-4 fw-bold text-gray-900">
+                                        Active Vendors
+                                    </div>
+                                    <div class="fs-7 fw-semibold text-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="javascript:void(0);">
+                            <div data-bs-toggle="modal" data-bs-target="#kt_preview" data-kt-category="abstract" class="cursor-pointer bg-body d-flex align-items-center rounded-3 shadow-sm px-6 py-5">
+                                <div class="d-flex flex-center rounded bg-light-primary h-50px w-50px me-5">
+                                    <i class="fab fa-buromobelexperte text-danger" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fs-4 fw-bold text-gray-900">
+                                        PJP
+                                    </div>
+                                    <div class="fs-7 fw-semibold text-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="javascript:void(0);">
+                            <div data-bs-toggle="modal" data-bs-target="#kt_preview" data-kt-category="abstract" class="cursor-pointer bg-body d-flex align-items-center rounded-3 shadow-sm px-6 py-5">
+                                <div class="d-flex flex-center rounded bg-light-primary h-50px w-50px me-5">
+                                    <i class="fab fa-confluence text-success" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fs-4 fw-bold text-gray-900">
+                                        Attendance
+                                    </div>
+                                    <div class="fs-7 fw-semibold text-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="@Url.Action("NewVendor","Transaction", new {Area="SecureZone"})">
+                            <div data-bs-toggle="modal" data-bs-target="#kt_preview" data-kt-category="abstract" class="cursor-pointer bg-body d-flex align-items-center rounded-3 shadow-sm px-6 py-5">
+                                <div class="d-flex flex-center rounded bg-light-primary h-50px w-50px me-5">
+                                    <i class="fas fa-user-plus text-warning" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fs-4 fw-bold text-gray-900">
+                                        New Vendors
+                                    </div>
+                                    <div class="fs-7 fw-semibold text-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
