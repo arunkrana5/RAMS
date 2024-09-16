@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Session;
-using Microsoft.Extensions.Configuration; 
+using Microsoft.Extensions.Configuration;
+using MODEL;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static MODEL.CommonModel;
 
 namespace COMMON
 {
@@ -684,5 +686,222 @@ namespace COMMON
             HttpContextAccessor httpContextAccessor = new HttpContextAccessor();
             return httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
         }
+        public static string GetPhysicalPath(string pathFor = "", string EMPCODE = "")
+        {
+            string PhysicalPath = GetConfigValue("ApplicationPhysicalPath");
+            string InnerPath = "";
+            string functionReturnValue = "";
+            if (pathFor.ToLower() == "images")
+            {
+                InnerPath = "/assets/design/images";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "json")
+            {
+                InnerPath = "/Attachments/UserDetails/Jsondata";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+
+            }
+            else if (pathFor.ToLower() == "import")
+            {
+                InnerPath = "/Attachments/ImportExcels";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+
+            }
+            else if (pathFor.ToLower() == "onboarding")
+            {
+                string Year = DateTime.Now.Year.ToString();
+                string Month = DateTime.Now.Month.ToString("d2");
+                InnerPath = "/Attachments/Onboarding/" + Year + "/" + Month;
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "emptalentpool")
+            {
+                string Year = DateTime.Now.Year.ToString();
+                string Month = DateTime.Now.Month.ToString("d2");
+                InnerPath = "/Attachments/EMPTalentPool/" + Year + "/" + Month;
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "ssrentry")
+            {
+                string Year = DateTime.Now.Year.ToString();
+                string Month = DateTime.Now.Month.ToString("d2");
+                InnerPath = "/Attachments/Images/" + Year + "/" + Month;
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "tlentry")
+            {
+                string Year = DateTime.Now.Year.ToString();
+                string Month = DateTime.Now.Month.ToString("d2");
+
+                InnerPath = "/Attachments/TLImages/" + Year + "/" + Month;
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+
+            else if (pathFor.ToLower() == "autonsm")
+            {
+                InnerPath = "/Attachments/AutoReport/NSM";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "autorsm")
+            {
+                InnerPath = "/Attachments/AutoReport/RSM";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+
+            }
+            else if (pathFor.ToLower() == "autobsm")
+            {
+                InnerPath = "/Attachments/AutoReport/BSM";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "travel")
+            {
+                string Year = DateTime.Now.Year.ToString();
+                string Month = DateTime.Now.Month.ToString("d2");
+                InnerPath = "/Attachments/Travel/" + Year + "/" + Month;
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "recruit")
+            {
+                InnerPath = "/Attachments/Recruit/";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "pdfexport")
+            {
+                InnerPath = "/Attachments/ExportPDF/";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "empdoc")
+            {
+                InnerPath = "/Attachments/EmpDoc/" + EMPCODE;
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else if (pathFor.ToLower() == "isdsummaryreports")
+            {
+                InnerPath = "/Attachments/ISDSummaryReports";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            else
+            {
+                InnerPath = "/Attachments";
+                if (!Directory.Exists(PhysicalPath + InnerPath))
+                {
+                    Directory.CreateDirectory(PhysicalPath + InnerPath);
+                }
+                functionReturnValue = PhysicalPath + InnerPath;
+            }
+            return functionReturnValue;
+        }
+
+        public static string GetConfigValue(string KeyName)
+        {
+            string ValueType = "";
+            if (GetConfigSettingPair().ContainsKey(KeyName))
+            {
+                ValueType = GetConfigSettingPair()[KeyName];
+            }
+            return ValueType;
+        }
+        private static Dictionary<string, string> GetConfigSettingPair()
+        {
+            List<CommonModel.ConfigSetting> List = new List<CommonModel.ConfigSetting>();
+            Dictionary<string, string> obj = new Dictionary<string, string>();
+
+            GetResponse modal = new GetResponse();
+            modal.Doctype = "";
+            List = Common_SPU.GetConfigSetting(modal);
+            foreach (var item in List)
+            {
+                obj.Add(item.ConfigKey, item.ConfigValue);
+            }
+            return obj;
+        }
+        public static PostResponse UploadCameraImage(FileResponse Modal)
+        {
+            PostResponse result = new PostResponse();
+            result.SuccessMessage = "No action Taken";
+            string PhysicalPath = "";
+            try
+            {
+                Modal.FileExt = ".jpg";
+                Modal.FileName = Guid.NewGuid().ToString();
+                byte[] imageBytes = Convert.FromBase64String(Modal.ImageBase64String.Split(',')[1]);
+
+                if (Modal.Doctype.ToLower() == "ssr")
+                {
+                    Modal.Proc = "spu_SetMasterAttachment_SSR";
+                    PhysicalPath = GetPhysicalPath("SSREntry");
+                    result = Common_SPU.fnSetMasterAttachment(Modal);
+                    PhysicalPath = Path.Combine(PhysicalPath, Modal.FileName + "" + Modal.FileExt);
+                    File.WriteAllBytes(PhysicalPath, imageBytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                Common_SPU.LogError("Error during UploadCameraImage. The query was executed :", ex.ToString(), Modal.Doctype, "ClsApplicationSetting", "ClsApplicationSetting", Modal.LoginID, Modal.IPAddress);
+            }
+            return result;
+        }
+
     }
 }

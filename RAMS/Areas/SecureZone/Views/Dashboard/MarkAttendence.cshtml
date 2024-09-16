@@ -1,52 +1,134 @@
-﻿
-<div class="modal-content modal-content-demo">
+﻿@using static MODEL.CommonModel
+@{
+    var status = @ViewBag.StatusList as List<DropDownlist>;
+}
+<div class="modal-content">
     <div class="modal-header">
-        <h6 class="modal-title">Clock In  </h6>
-        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <div class="modal-body">
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="MyClockDisplay" class="clock">
-                    <span class="spnlivedate"></span>
-                </div>
-            </div>
-            <div class="col-lg-6 form-group">
-                <label>
-                    Attendence <sup>*</sup>
-                </label>
-
-            </div>
-
-            <div class="col-lg-6 form-group" style="display:none;">
-                <label>Location  <sup>*</sup></label>
-            </div>
-
-
-            <div class="col-lg-12 form-group">
-                <label>Note </label>
-            </div>
-
-
-
-            <div class="col-lg-12 form-group camerabtn">
-                <a title="click here for open camera" onclick="OpenCamera(this)" style="color: #fff">
-                    <i class="fa fa-camera" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="col-lg-12 form-group" id="flagDiv" style="display:none">
-                <label id="spnFlag"></label>
-            </div>
-
+        <div class="col-md-6">
+            <h5 class="modal-title" id="ModalViewLabel">Clock In</h5>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close" style="margin-left:5px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </div>
+    <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="MyClockDisplay" class="clock">
+                        <span class="spnlivedate"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Attendence</label>
+                        <select class="form-control" id="ddlAttendanceStatus" required>
+                            <option>-- Select --</option>
+                            @foreach (var item in status)
+                            {
+                                <option value="@item.ID">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" id="txtLatitude" />
+                <input type="hidden" id="txtLongitude" />
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Note</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-lg-12 form-group camerabtn">
+                    <a title="click here for open camera" onclick="OpenCamera(this)" style="color: #fff">
+                        <i class="fa fa-camera" style="font-size: 2rem;color: blue;" aria-hidden="true"></i>
+                    </a>
+                    <img src="https://thrivera.co.in/assets/design/images/NoImage.jpeg" width="300" />
+                </div>
+                <div class="col-lg-12 form-group" id="flagDiv" style="display:none">
+                    <label id="spnFlag"></label>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="modal-footer">
-        <a id="btnSendLocation" class="btn btn-indigo">Refresh Location</a>
-        <button class="btn btn-indigo" type="submit">Submit</button>
-        <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+        <a id="btnSendLocation" class="btn btn--primary">Refresh Location</a>
+        <button class="btn btn--info" id="btnSubmit">Submit</button>
+        <button class="btn btn--danger" data-dismiss="modal" type="button">Close</button>
     </div>
 </div>
 
+
+
+<script src="~/js/webcam.js"></script>
+<script>
+    $(document).ready(function () {
+        setInterval(function () {
+            GetLiveTime();
+        }, 1000);
+
+        $(".applyselect").select2();
+        getLocation();
+    });
+    function GetLiveTime() {
+        $.ajax({
+            url: "/SecureZone/CommonAjax/GetDateTimeJson",
+            type: "Post",
+            async: true,
+            success: function (data) {
+                $(".spnlivedate").html(data);
+            }
+        });
+    }
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            //FailToaster("Geolocation is not supported by this browser.");
+            //$("#Error").val("Geolocation is not supported by this browser.");
+            $("#MTargetDiv").empty();
+            $("#MTargetDiv").html("Please turn on the Location by setting");
+
+        }
+    }
+
+    function showPosition(position) {
+        $("#txtLatitude").val(position.coords.latitude);
+        $("#txtLongitude").val(position.coords.longitude);
+        $("#txtLocation").val($("#Latitude").val() + "," + $("#Longitude").val());
+    }
+
+    function showError(error) {
+        var Message = "";
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                Message = "User denied the request for Geolocation.";;
+                break;
+            case error.POSITION_UNAVAILABLE:
+                Message = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                Message = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                Message = "An unknown error occurred.";
+                break;
+        }
+        $("#Error").val(Message);
+        $("#WarningText").empty();
+        $("#WarningText").html(Message);
+        $('#MarkAttendenceModal').modal('hide');
+        $('#WarningModal').modal({
+            show: 'true',
+            backdrop: 'static'
+        });
+        $('#WarningModal').modal('show');
+        $('#WarningModal').on('hidden.bs.modal', function () {
+
+            $('#WarningModal').remove();
+        });
+    }
+</script>

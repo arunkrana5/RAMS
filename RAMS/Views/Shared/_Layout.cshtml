@@ -42,6 +42,7 @@
             background-color: #71d1eb !important;
         }
     </style>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 </head>
 <body>
     <div class="page-wrapper default-version">
@@ -271,12 +272,6 @@
                 </ul>
             </div>
         </nav>
-        <div class="modal" id="MarkAttendenceModal" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog " role="document">
-                <div id="MTargetDiv"></div>
-            </div>
-
-        </div>
         <div class="body-wrapper">
             <div class="bodywrapper__inner">
 
@@ -288,6 +283,52 @@
     </div>
     <div class="loader">
         <img src="~/assets/media/spinner-5.gif" style="position: relative;max-width: 100%;height: auto;width: 4%;top: 50%;" />
+    </div>
+    <div class="modal fade" id="MarkAttendenceModal" tabindex="-1" role="dialog" aria-labelledby="ModalViewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div id="MTargetDiv"></div>
+        </div>
+    </div>
+    <div class="modal fade" id="WarningModal" tabindex="-1" role="dialog" aria-labelledby="ModalViewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="WarningText"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="CaptureImageModal" tabindex="-1" role="dialog" aria-labelledby="ModalViewLabel" aria-hidden="true" style="width: 101%;">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-md-6">
+                        <h5 class="modal-title" id="ModalViewLabel">Capture Image</h5>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close" style="margin-left:5px;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="CameraScreen"></div>
+                        </div>
+                        <div class="col-lg-12 text-center">
+                            <a class="btn btn--info" onClick="TakePhoto()">
+                                Capture Photo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="~/layout/bootstrap.bundle.min.js"></script>
     <script src="~/layout/bootstrap-toggle.min.js"></script>
@@ -324,12 +365,55 @@
                 $('.nicEdit-main').focus();
             });
         })(jQuery);
-    </script>
-    <script>
         if ($('li').hasClass('active')) {
             $('#sidebar__menuWrapper').animate({
                 scrollTop: eval($(".active").offset().top - 320)
             }, 500);
+        }
+
+        var myCameraElements;
+        function OpenCamera(obj, facingMode = "") {
+            myCameraElements = $(obj);
+            if (facingMode == "") {
+                facingMode = "user";
+            } else {
+                facingMode = "environment";
+            }
+            Webcam.set({
+                width: 800,
+                height: 1000,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+
+            Webcam.set('constraints', {
+                facingMode: facingMode
+            });
+            Webcam.attach('#CameraScreen');
+
+            $('#CaptureImageModal').modal({
+                show: 'true',
+                backdrop: 'static'
+            });
+            $('#CaptureImageModal').modal('show');
+            $('#CaptureImageModal').on('hidden.bs.modal', function () {
+
+                $('#CaptureImageModal').remove();
+            });
+        }
+        function TakePhoto() {
+            var target = $(myCameraElements).closest("div");
+            //            var Count = $("#hdnCameraCount").val();
+            Webcam.snap(function (data_uri) {
+                $(target).find('img').attr("src", data_uri);
+                $(target).find('img').attr("id", "img_att");
+                $(target).find("input:hidden").val(data_uri);
+                Webcam.reset('#CameraScreen');
+                $('#CaptureImageModal').modal('hide');
+                $('#btnSubmit').on('click', function () {
+                    SubmitAttndence();
+                });
+            });
         }
     </script>
 </body>

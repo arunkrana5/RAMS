@@ -1,6 +1,41 @@
 ﻿@{
     Layout = "_Layout";
 }
+<style>
+    .clock {
+        text-align: center;
+        color: #6574cd;
+        font-size: 19px;
+        font-weight: bold;
+        background: #ebeeff;
+        padding: 10px 10px;
+        border-radius: 10px;
+        display: table;
+        margin: 10px auto 30px;
+        box-shadow: 0px 10px 10px 20px rgb(176 184 214 / 9%), 10px 10px 15px -5px #b0b8d6;
+        width: 100%;
+    }
+
+    #MyClockDisplay .spnlivedate {
+        margin: 5px auto 5px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .spnlivedate {
+        text-align: center;
+        color: #6574cd;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: bold;
+        background: #ebeeff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: table;
+        margin: 10px auto 40px;
+        box-shadow: 0px 10px 10px 20px rgb(176 184 214 / 9%), 10px 10px 15px -5px #b0b8d6;
+    }
+</style>
 <div class="d-flex mb-10 flex-wrap gap-3 justify-content-between align-items-center">
     <h6 class="page-title">Dashboard</h6>
 
@@ -235,26 +270,26 @@
                     </a>
                 </div>
                 <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6 col-xs-12 my-2 clsm-1 my-1">
-                    <div class="card   rl-border-5 dashSSR-profile ssrTarget"> 
+                    <div class="card   rl-border-5 dashSSR-profile ssrTarget">
                         <div class="card-body ">
                             <div class="row gx-2">
                                 <div class="col-xl-12 col-md-12 col-sm-8 col-8 my-2 px-2  my-1 ssrName">
                                     <div class="d-block   border-0 text-center px-0  px-4">
-                                        <h4 class="text-center mb-2"><b> RAJ SINGH  (BSRD105464)  </b></h4> 
-                                        <p class="crdtxt">Are are assigned to<br><strong>Thakur Trading  (DEL-471)</strong></p> 
+                                        <h4 class="text-center mb-2"><b> @ViewBag.Name  (@ViewBag.Code)  </b></h4>
+                                        <p class="crdtxt">Are are assigned to<br><strong>@ViewBag.DName  (@ViewBag.DCode)</strong></p>
                                     </div>
                                 </div>
                                 <div class="col-12 ssrmenu">
                                     <div class="row px-2 py-2">
                                         <div class="col-6">
-                                            <a class="btn btn--primary btn-block mr-3" href="/Profile"><i class="fe fe-repeat"></i> View Profile</a> 
-                                        </div> 
+                                            <a class="btn btn--primary btn-block mr-3" href="/Profile"><i class="fe fe-repeat"></i> View Profile</a>
+                                        </div>
                                         <div class="col-6">
-                                            <a id="btn_MarkAttendace" class="btn btn--success btn-block"><i class="fe fe-plus"></i> Site In</a> 
+                                            <a onclick="MarkAttendence()" class="btn btn--success btn-block"><i class="fe fe-plus"></i> Site In</a>
                                         </div>
                                     </div>
-                                </div> 
-                            </div> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -269,7 +304,7 @@
         $('#btn_MarkAttendace').on('click', function () {
             MarkAttendence();
         });
-        
+
 
         loader_hide();
     });
@@ -282,9 +317,19 @@
                 $("#MTargetDiv").empty();
                 $("#MTargetDiv").html(data);
                 $('#MarkAttendenceModal').modal({
-                    backdrop: 'static',
-                    keyboard: false
+                    show: 'true',
+                    backdrop: 'static'
                 });
+                $('#MarkAttendenceModal').modal('show');
+                $('#MarkAttendenceModal').on('hidden.bs.modal', function () {
+
+                    $('#MarkAttendenceModal').remove();
+                });
+
+                var form = $("form")
+                    .removeData("validator")
+                    .removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse(form);
             },
             error: function (er) {
                 alert(er);
@@ -292,7 +337,28 @@
             }
         });
     }
-
+    function SubmitAttndence() {
+        let obj = {};
+        obj.StatusID = $('#ddlAttendanceStatus').val();
+        obj.Location = $("#txtLatitude").val() + "," + $("#txtLongitude").val();
+        obj.ImageBase64String = $('#img_att').attr('src');
+        obj.Latitude = $("#txtLatitude").val();
+        console.log(obj);
+        $.ajax({
+            url: "/SecureZone/Dashboard/MarkAttendence",
+            type: "Post",
+            data: { Modal: obj },
+            beforeSend: function () {
+                loader_show();
+            },
+            success: function (data) {
+                MarkAttendenceOnSuccess();
+            },
+            error: function (er) {
+                alert(er);
+            }
+        });
+    }
 
     function MarkAttendenceOnSuccess(obj) {
         if (obj.Status) {
@@ -334,40 +400,6 @@
             }
         });
     }
-    var myCameraElements;
-    function OpenCamera(obj, facingMode = "") {
-        myCameraElements = $(obj);
-        if (facingMode == "") {
-            facingMode = "user";
-        } else {
-            facingMode = "environment";
-        }
-        Webcam.set({
-            width: 800,
-            height: 1000,
-            image_format: 'jpeg',
-            jpeg_quality: 90
-        });
 
-        Webcam.set('constraints', {
-            facingMode: facingMode
-        });
-        Webcam.attach('#CameraScreen');
 
-        $('#CaptureImageModal').modal({
-            backdrop: 'static',
-            keyboard: false
-        })
-    }
-
-    function TakePhoto() {
-        var target = $(myCameraElements).closest("div");
-        //            var Count = $("#hdnCameraCount").val();
-        Webcam.snap(function (data_uri) {
-            $(target).find('img').attr("src", data_uri);
-            $(target).find("input:hidden").val(data_uri);
-            Webcam.reset('#CameraScreen');
-            $('#CaptureImageModal').modal('hide');
-        });
-    }
 </script>

@@ -45,6 +45,8 @@ $(document).ready(function () {
     let deptddl = GetDropDownList('', 'Department');
     $('#ddlDepartment').html(deptddl);
 
+    let dealerddl = GetDropDownList('','Dealer');
+    $('#ddlDealer').html(dealerddl);
     $('.applyselect').select2();
     //userdoc.init(1, 'VENDOR_CREATION', 'tbl_UsersDoc', 0, 1, '');
     $('#expandAll').on('click', function () {

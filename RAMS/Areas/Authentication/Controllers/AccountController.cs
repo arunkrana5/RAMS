@@ -54,6 +54,13 @@ namespace RAMS.Areas.Authentication.Controllers
                         ClsApplicationSetting.SetSessionValue("Phone", result.Phone.ToString());
                         ClsApplicationSetting.SetSessionValue("Email", result.Email.ToString());
                         ClsApplicationSetting.SetSessionValue("Gender", result.Gender.ToString());
+                        ClsApplicationSetting.SetSessionValue("DesignName", result.DesignName.ToString());
+                        ClsApplicationSetting.SetSessionValue("DeptName", result.DeptName.ToString());
+                        ClsApplicationSetting.SetSessionValue("AttendenceStatus", result.AttendenceStatus.ToString());
+                        ClsApplicationSetting.SetSessionValue("DealerID", result.DealerID.ToString());
+                        ClsApplicationSetting.SetSessionValue("DealerName", result.DealerName.ToString());
+                        ClsApplicationSetting.SetSessionValue("DealerCode", result.DealerCode.ToString());
+                        ClsApplicationSetting.SetSessionValue("DealerArea", result.DealerArea.ToString());
                         jsonData = new JsonData() { status = true, message = "", Data = result };
                     }
                     else
